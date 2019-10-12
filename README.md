@@ -1,2 +1,1 @@
-# dotfiles
-My personal linux dotfiles
+# My Linix Config
