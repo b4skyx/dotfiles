@@ -1,0 +1,1 @@
+../../.dotfiles-woefe/ranger/.config/ranger/scope.sh
