@@ -1,0 +1,122 @@
+*vifm-plugin.txt*    For Vifm version 0.10.1  Last change: 2019 Nov 29
+
+ Email for bugs and suggestions: <xaizek@posteo.net>
+
+Using the vifm.vim plugin~
+
+vifm-plugin for using vifm in Vim as a file selector.
+
+Commands:
+
+                                               *vifm-:EditVifm*
+  :EditVifm   select a file or files to open in the current buffer.
+                                               *vifm-:Vifm*
+  :Vifm       alias for :EditVifm.
+                                               *vifm-:SplitVifm*
+  :SplitVifm  split buffer and select a file or files to open.
+                                               *vifm-:VsplitVifm*
+  :VsplitVifm vertically split buffer and select a file or files to open.
+                                               *vifm-:DiffVifm*
+  :DiffVifm   select a file or files to compare to the current file with
+              :vert diffsplit.
+                                               *vifm-:TabVifm*
+  :TabVifm    select a file or files to open in tabs.
+
+Each command accepts up to two arguments: left pane directory and right pane
+directory.  After arguments are checked, vifm process is spawned in a special
+"file-picker" mode.  To pick files just open them either by pressing l, i or
+Enter keys, or by running :edit command.  If no files are selected, file
+under the cursor is opened, otherwise whole selection is passed to the plugin
+and opened in Vim.
+
+Once vifm is opened additional commands that correspond to commands listed
+above become available:
+  :EditVim
+  :VsplitVim
+  :SplitVim
+  :DiffVim
+  :TabVim
+Their meaning is the same as the meaning of *Vifm, but these commands overrule
+their *Vifm command used to start vifm.  *Vifm basically provide default,
+which can be overwritten right on file open.
+
+Installing and disabling~
+
+To use the plugin copy the vifm.vim file to either the system wide vim/plugin
+directory or into ~/.vim/plugin.
+
+If you would prefer not to use the plugin and it is in the system wide plugin
+directory add >
+
+ let loaded_vifm=1
+
+to your ~/.vimrc file.
+
+Configuration variables~
+
+                                               *g:vifm*
+A string variable.  Equals "vifm" by default and specifies path to vifm's
+executable.
+
+                                               *g:vifm_exec_args*
+A string variable that specifies arguments for vifm.  Empty by default.
+
+                                               *g:vifm_term*
+A string variable that specifies command to run GUI terminal.
+By default it's equal to 'xterm -e'.
+
+                                               *g:vifm_embed_term*
+A boolean variable.  When evaluates to true and it's possible to create a
+terminal buffer, it will be used.  Enabled by default inside GUI version.
+Effectively always enabled in neovim.
+
+                                               *g:vifm_embed_split*
+A boolean variable.  When evaluates to true and Vifm is embedded in a
+terminal, it will be run inside a new split.  This allows commands to support
+|<mods>| and a |<count>| for controlling the orientation and size of the
+split.  False by default.
+
+                                               *g:vifm_embed_cwd*
+                                               {not on MS-Windows}
+A boolean variable.  When evaluates to true and Vifm is embedded in a
+terminal, vifm will change the active directory in vim while navigating.
+False by default.
+
+                                               *g:vifm_replace_netrw*
+A boolean variable.  When enabled, the the |netrw| plugin will be disabled. In
+its place, folders will be opened using vifm.  Defaults to false.
+
+                                               *g:vifm_replace_netrw_cmd*
+A string variable.  The command to use to open folders when
+g:vifm_replace_netrw is enabled.  Defaults to "Vifm".
+
+Extension for "vifm" filetype~
+
+                                                *vifm-K*
+K                       Like setting 'keywordprg' to ":help vifm-" (if that
+                        would be possible), but slightly smarter.  Only mapped
+                        in vifm files.
+
+Extension for "mail" filetype~
+
+Vifm's bundle for Vim also includes a tiny mail file type extension that allows
+one to pick files for attachments via Vifm.
+
+                                               *vifm-<localleader>a*
+The function is mapped to <localleader>a key for "mail" filetype buffers only.
+It inserts files picked via Vifm as attachments ("Attach: ...") after
+"Subject" header.
+
+See also~
+
+Repository: https://github.com/vifm/vifm.vim
+Website: https://vifm.info/
+Wiki: https://wiki.vifm.info/
+
+Esperanto translation of the documentation by Sebastian Cyprych:
+http://cyprych.neostrada.pl/tekstoj/komputiloj/vifm-help.eo.html
+
+Vifm's Vim-documentation: |vifm-app.txt|
+
+--------------------------------------------------------------------------------
+ vim:tw=78:fo=tcq2:isk=!-~,^*,^\|,^\":ts=8:ft=help:norl:
