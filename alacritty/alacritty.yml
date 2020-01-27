@@ -13,7 +13,7 @@ env:
   # check the local terminfo database and use 'alacritty' if it is
   # available, otherwise 'xterm-256color' is used.
   #
-  TERM: xterm-256color
+  # TERM: alacritty
   WINIT_HIDPI_FACTOR: "1"
 
 window:
@@ -41,7 +41,7 @@ window:
   # Values for `decorations`:
   #     - full: Borders and title bar
   #     - none: Neither borders nor title bar
-  decorations: none
+  decorations: full
   # Window title
   #title: Alacritty
 
