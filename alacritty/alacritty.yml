@@ -118,78 +118,71 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-
-# Base16 PaperColor Light - alacritty color config
-# Jon Leopard (http://github.com/jonleopard) based on PaperColor Theme (https://github.com/NLKNguyen/papercolor-theme)
 colors:
   # Default colors
   primary:
-    background: '0xeeeeee'
-    foreground: '0x444444'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0xeeeeee'
-    cursor: '0x444444'
+    background: '0x2b2b2b'
+    foreground: '0xe6e1dc'
 
   # Normal colors
   normal:
-    black:   '0x444444'
-    red:     '0xaf0000'
-    green:   '0x5f8700'
-    yellow:  '0xd75f00'
-    blue:    '0x005f87'
-    magenta: '0xd70087'
-    cyan:    '0x0087af'
-    white:   '0xbcbcbc'
+    black:   '0x2b2b2b'
+    red:     '0xda4939'
+    green:   '0xa5c261'
+    yellow:  '0xffc66d'
+    blue:    '0x6d9cbe'
+    magenta: '0xb6b3eb'
+    cyan:    '0x519f50'
+    white:   '0xe6e1dc'
 
   # Bright colors
   bright:
-    black:   '0x444444'
-    red:     '0xd70000'
-    green:   '0x008700'
-    yellow:  '0xd75f00'
-    blue:    '0x005faf'
-    magenta: '0x8700af'
-    cyan:    '0x0087af'
-    white:   '0xbcbcbc'
+    black:   '0x5a647e'
+    red:     '0xda4939'
+    green:   '0xa5c261'
+    yellow:  '0xffc66d'
+    blue:    '0x6d9cbe'
+    magenta: '0xb6b3eb'
+    cyan:    '0x519f50'
+    white:   '0xf9f7f3'
+
+# # Base16 PaperColor Light - alacritty color config
+# # Jon Leopard (http://github.com/jonleopard) based on PaperColor Theme (https://github.com/NLKNguyen/papercolor-theme)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0xeeeeee'
+#     foreground: '0x444444'
+
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text: '0xeeeeee'
+#     cursor: '0x444444'
+
+#   # Normal colors
+#   normal:
+#     black:   '0x444444'
+#     red:     '0xaf0000'
+#     green:   '0x5f8700'
+#     yellow:  '0xd75f00'
+#     blue:    '0x005f87'
+#     magenta: '0xd70087'
+#     cyan:    '0x0087af'
+#     white:   '0xbcbcbc'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x444444'
+#     red:     '0xd70000'
+#     green:   '0x008700'
+#     yellow:  '0xd75f00'
+#     blue:    '0x005faf'
+#     magenta: '0x8700af'
+#     cyan:    '0x0087af'
+#     white:   '0xbcbcbc'
 
 
 
-#colors:
-#  # Default colors
-#  primary:
-#    background: '0x2b2bb'
-#    foreground: '0xe6e1dc'
-#
-#  # Normal colors
-#  normal:
-#    black:   '0x2b2b2b'
-#    red:     '0xda4939'
-#    green:   '0xa5c261'
-#    yellow:  '0xffc66d'
-#    blue:    '0x6d9cbe'
-#    magenta: '0xb6b3eb'
-#    cyan:    '0x519f50'
-#    white:   '0xe6e1dc'
-#
-#  # Bright colors
-#  bright:
-#    black:   '0x5a647e'
-#    red:     '0xda4939'
-#    green:   '0xa5c261'
-#    yellow:  '0xffc66d'
-#    blue:    '0x6d9cbe'
-#    magenta: '0xb6b3eb'
-#    cyan:    '0x519f50'
-#    white:   '0xf9f7f3'
-#  # Indexed Colors
-#  #
-#  # The indexed colors include all colors from 16 to 256.
-#  # When these are not set, they're filled with sensible defaults.
-#  #
-#  #indexed_colors:
-#  #  - { index: 16, color: '0x000000' }
 
 # Visual Bell
 #
@@ -221,7 +214,7 @@ visual_bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.92
+background_opacity: 0.98
 
 # Mouse bindings
 #
