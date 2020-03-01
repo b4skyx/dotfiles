@@ -1,0 +1,5 @@
+{
+  "python.linting.enabled": false,
+  "rust-client.disableRustup": true,
+  "python.jediEnabled": false
+}
