@@ -9,6 +9,9 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'cespare/vim-toml'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'rbgrouleff/bclose.vim'
@@ -72,9 +75,7 @@ set clipboard+=unnamedplus
 	map <leader>p :!opout <c-r>%<CR><CR>
 
 " Ensure files are read as what I want:
-	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
+	" let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
 
@@ -111,19 +112,35 @@ noremap <Leader><Tab> :Bw<CR>
 noremap <Leader><S-Tab> :Bw!<CR>
 noremap <C-t> :tabnew split<CR>
 
-" use <tab> for trigger completion and navigate to the next complete item:
-	function! s:check_back_space() abort
-  		let col = col('.') - 1
-  		return !col || getline('.')[col - 1]  =~ '\s'
-	endfunction
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
-" Enable folding
-	set foldmethod=indent
-
+" Coc autocompletion on Tab
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
+" Enable folding
+	set foldmethod=indent
+
+" Rust autofmt on save
+let g:rustfmt_autosave = 1
+
+" Markdown
+set conceallevel=2
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_auto_insert_bullets = 1
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_fenced_languages = ['csharp=cs', 'rust=rs']
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_autowrite = 1
+autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
 
 " Save file as sudo on files that require root permission
 	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
