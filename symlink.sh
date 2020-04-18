@@ -13,7 +13,6 @@ ln -sfn "$cwd"/ranger ~/.config/ranger
 
 # Zsh
 ln -sfn "$cwd"/zsh/.zsh-plugins ~/.zsh-plugins
-ln -sfn "$cwd"/zsh/.zdirs ~/.zdirs
 ln -sfn "$cwd"/zsh/.zprofile ~/.zprofile
 ln -sfn "$cwd"/zsh/.zshenv ~/.zsenv
 ln -sfn "$cwd"/zsh/.zshrc ~/.zshrc
