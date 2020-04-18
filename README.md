@@ -1,7 +1,3 @@
-# My Linix Config
-
-My Linux configuration files
-
 ```
               ▄▄                         ▄▄▄▄      ██     ▄▄▄▄
               ██              ██        ██▀▀▀      ▀▀     ▀▀██
@@ -12,32 +8,13 @@ My Linux configuration files
           ▀▀▀ ▀▀    ▀▀▀▀       ▀▀▀▀     ▀▀      ▀▀▀▀▀▀▀▀     ▀▀▀▀     ▀▀▀▀▀    ▀▀▀▀▀▀
 ```
 
+Cause every developer needs one!
 
-
-
-
-### Setup:
-
-DE: XFCE
-
-Compositor: Compton
-
-Widgets: Conky
-
-Theme: Vimix-Laptop
-
-WM Theme: Materia Light Compact
-
-Panel: Xfce4-Panel
-
-Terminal: Alacritty
-
-Terminal Font: Hack 14
-
-Application Launcher: Rofi
-
-File Manager: Ranger
-
-Browser: Firefox
-
-<!-- ### Screenshots -->
+### The following dotfiles contain configuration for
+- nvim/vim
+- alacritty (Terminal)
+- zsh (shell)
+- conky (widget)
+- mpv (Media Player)
+- ranger (File Manager)
+---
