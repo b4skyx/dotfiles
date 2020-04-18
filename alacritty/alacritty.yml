@@ -22,7 +22,7 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 90
+    columns: 85
     lines: 28
 
   # Window padding (changes require restart)
@@ -30,8 +30,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 10
-    y: 15
+    x: 8
+    y: 8
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
@@ -67,7 +67,7 @@ scrolling:
   #faux_multiplier: 3
 
   # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
+  # auto_scroll: false
 
 # Spaces per Tab (changes require restart)
 #
@@ -76,7 +76,7 @@ scrolling:
 # Some applications, like Emacs, rely on knowing about the width of a tab.
 # To prevent unexpected behavior in these applications, it's also required to
 # change the `it` value in terminfo when altering this setting.
-tabspaces: 8
+# tabspaces: 8
 
 # Font configuration (changes require restart)
 font:
@@ -99,7 +99,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 14
+  size: 10.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -150,43 +150,69 @@ font:
 #     cyan:    '0x3971ed'
 #     white:   '0x1d1f21'
 
-draw_bold_text_with_bright_colors: false
 # Base16 PaperColor Light - alacritty color config
 # Jon Leopard (http://github.com/jonleopard) based on PaperColor Theme (https://github.com/NLKNguyen/papercolor-theme)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0xffffff'
+#     foreground: '0x373b41'
+
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text: '0xeeeeee'
+#     cursor: '0x444444'
+
+#   # Normal colors
+#   normal:
+#     black:   '0x444444'
+#     red:     '0xaf0000'
+#     green:   '0x5f8700'
+#     yellow:  '0xd75f00'
+#     blue:    '0x005f87'
+#     magenta: '0xd70087'
+#     cyan:    '0x0087af'
+#     white:   '0xbcbcbc'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x444444'
+#     red:     '0xd70000'
+#     green:   '0x008700'
+#     yellow:  '0xd75f00'
+#     blue:    '0x005faf'
+#     magenta: '0x8700af'
+#     cyan:    '0x0087af'
+#     white:   '0xbcbcbc'
+
+
 colors:
   # Default colors
   primary:
-    background: '0xffffff'
-    foreground: '0x373b41'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0xeeeeee'
-    cursor: '0x444444'
+    background: '0x1d1f21'
+    foreground: '0xc5c8c6'
 
   # Normal colors
   normal:
-    black:   '0x444444'
-    red:     '0xaf0000'
-    green:   '0x5f8700'
-    yellow:  '0xd75f00'
-    blue:    '0x005f87'
-    magenta: '0xd70087'
-    cyan:    '0x0087af'
-    white:   '0xbcbcbc'
+    black:   '0xfe8989'
+    red:     '0xcc6666'
+    green:   '0xb5bd68'
+    yellow:  '0xf0c674'
+    blue:    '0x81a2be'
+    magenta: '0xb294bb'
+    cyan:    '0x8abeb7'
+    white:   '0xc5c8c6'
 
   # Bright colors
   bright:
-    black:   '0x444444'
-    red:     '0xd70000'
-    green:   '0x008700'
-    yellow:  '0xd75f00'
-    blue:    '0x005faf'
-    magenta: '0x8700af'
-    cyan:    '0x0087af'
-    white:   '0xbcbcbc'
-
-
+    black:   '0x969896'
+    red:     '0xcc6666'
+    green:   '0xb5bd68'
+    yellow:  '0xf0c674'
+    blue:    '0x81a2be'
+    magenta: '0xb294bb'
+    cyan:    '0x8abeb7'
+    white:   '0xffffff'
 
 
 # Visual Bell

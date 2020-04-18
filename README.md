@@ -40,25 +40,4 @@ File Manager: Ranger
 
 Browser: Firefox
 
-
-
-### Screenshots
-
-![1572235295713](https://raw.githubusercontent.com/b4skyx/dotfiles/master/README.assets/1572235295713.png)
-
-
-
-![1572235350884](https://raw.githubusercontent.com/b4skyx/dotfiles/master/README.assets/1572235350884.png)
-
-
-
-![1572235455360](https://raw.githubusercontent.com/b4skyx/dotfiles/master/README.assets/1572235455360.png)
-
-
-
-![1572235555920](https://raw.githubusercontent.com/b4skyx/dotfiles/master/README.assets/1572235555920.png)
-
-
-
-
-
+<!-- ### Screenshots -->

@@ -1,6 +1,0 @@
-{
-  "python.linting.enabled": false,
-  "rust-client.disableRustup": true,
-  "python.jediEnabled": false,
-  "java.home": "/usr/lib/jvm/default/"
-}
