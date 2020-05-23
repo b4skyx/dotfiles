@@ -27,7 +27,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'bagrat/vim-buffet'
 call plug#end()
 
-set bg=light
 set go=a
 set mouse=a
 set nohlsearch
@@ -38,6 +37,7 @@ set clipboard+=unnamedplus
 	set nocompatible
 	filetype plugin on
 	colorscheme pablo
+	set bg=light
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
