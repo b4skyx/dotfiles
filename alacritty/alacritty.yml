@@ -115,8 +115,9 @@ font:
     y: 0
 
 
-# # Base16 Google Light - alacritty color config
-# # Seth Wright (http://sethawright.com)
+
+# # Base16 PaperColor Light - alacritty color config
+# # Jon Leopard (http://github.com/jonleopard) based on PaperColor Theme (https://github.com/NLKNguyen/papercolor-theme)
 # colors:
 #   # Default colors
 #   primary:
@@ -125,94 +126,59 @@ font:
 
 #   # Colors the cursor will use if `custom_cursor_colors` is true
 #   cursor:
-#     text: '0xffffff'
-#     cursor: '0x373b41'
+#     text: '0xeeeeee'
+#     cursor: '0x444444'
 
 #   # Normal colors
 #   normal:
-#     black:   '0xffffff'
-#     red:     '0xcc342b'
-#     green:   '0x198844'
-#     yellow:  '0xfba922'
-#     blue:    '0x3971ed'
-#     magenta: '0xa36ac7'
-#     cyan:    '0x3971ed'
-#     white:   '0x373b41'
+#     black:   '0x444444'
+#     red:     '0xaf0000'
+#     green:   '0x5f8700'
+#     yellow:  '0xd75f00'
+#     blue:    '0x005f87'
+#     magenta: '0xd70087'
+#     cyan:    '0x0087af'
+#     white:   '0xbcbcbc'
 
 #   # Bright colors
 #   bright:
-#     black:   '0xb4b7b4'
-#     red:     '0xf96a38'
-#     green:   '0xe0e0e0'
-#     yellow:  '0xc5c8c6'
-#     blue:    '0x969896'
-#     magenta: '0x282a2e'
-#     cyan:    '0x3971ed'
-#     white:   '0x1d1f21'
+#     black:   '0x444444'
+#     red:     '0xd70000'
+#     green:   '0x008700'
+#     yellow:  '0xd75f00'
+#     blue:    '0x005faf'
+#     magenta: '0xbcbcbc'
+#     cyan:    '0x444444'
+#     white:   '0xbcbcbc'
 
-# Base16 PaperColor Light - alacritty color config
-# Jon Leopard (http://github.com/jonleopard) based on PaperColor Theme (https://github.com/NLKNguyen/papercolor-theme)
+
 colors:
   # Default colors
   primary:
-    background: '0xffffff'
-    foreground: '0x373b41'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0xeeeeee'
-    cursor: '0x444444'
+    background: '0x1d1f21'
+    foreground: '0xc5c8c6'
 
   # Normal colors
   normal:
-    black:   '0x444444'
-    red:     '0xaf0000'
-    green:   '0x5f8700'
-    yellow:  '0xd75f00'
-    blue:    '0x005f87'
-    magenta: '0xd70087'
-    cyan:    '0x0087af'
-    white:   '0xbcbcbc'
+    black:   '0xc5c8c6'
+    red:     '0xcc6666'
+    green:   '0xb5bd68'
+    yellow:  '0xf0c674'
+    blue:    '0x81a2be'
+    magenta: '0xb294bb'
+    cyan:    '0x8abeb7'
+    white:   '0xc5c8c6'
 
   # Bright colors
   bright:
-    black:   '0x444444'
-    red:     '0xd70000'
-    green:   '0x008700'
-    yellow:  '0xd75f00'
-    blue:    '0x005faf'
-    magenta: '0xbcbcbc'
-    cyan:    '0x444444'
-    white:   '0xbcbcbc'
-
-
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0x1d1f21'
-#     foreground: '0xc5c8c6'
-
-#   # Normal colors
-#   normal:
-#     black:   '0xfe8989'
-#     red:     '0xcc6666'
-#     green:   '0xb5bd68'
-#     yellow:  '0xf0c674'
-#     blue:    '0x81a2be'
-#     magenta: '0xb294bb'
-#     cyan:    '0x8abeb7'
-#     white:   '0xc5c8c6'
-
-#   # Bright colors
-#   bright:
-#     black:   '0x969896'
-#     red:     '0xcc6666'
-#     green:   '0xb5bd68'
-#     yellow:  '0xf0c674'
-#     blue:    '0x81a2be'
-#     magenta: '0xb294bb'
-#     cyan:    '0x8abeb7'
-#     white:   '0xffffff'
+    black:   '0x969896'
+    red:     '0xcc6666'
+    green:   '0xb5bd68'
+    yellow:  '0xf0c674'
+    blue:    '0x81a2be'
+    magenta: '0xb294bb'
+    cyan:    '0x8abeb7'
+    white:   '0xffffff'
 
 
 # Visual Bell
@@ -245,7 +211,7 @@ visual_bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.96
+background_opacity: 0.90
 
 # Mouse bindings
 #

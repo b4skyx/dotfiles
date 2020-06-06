@@ -36,8 +36,8 @@ set clipboard+=unnamedplus
 	nnoremap c "_c
 	set nocompatible
 	filetype plugin on
-	colorscheme pablo
-	set bg=light
+	colorscheme default
+	set bg=dark
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
