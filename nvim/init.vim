@@ -36,7 +36,7 @@ set clipboard+=unnamedplus
 	nnoremap c "_c
 	set nocompatible
 	filetype plugin on
-	colorscheme default
+	colorscheme PaperColor
 	set bg=dark
 	syntax on
 	set encoding=utf-8
