@@ -18,5 +18,5 @@ ln -sfn "$cwd"/zsh/.zshenv ~/.zsenv
 ln -sfn "$cwd"/zsh/.zshrc ~/.zshrc
 
 ln -sfn "$cwd"/redshift.conf ~/.config/redshift.conf
-
 ln -sfn "$cwd"/picom ~/.config/picom
+ln -sfn "$cwd"/rofi ~/.config/rofi
