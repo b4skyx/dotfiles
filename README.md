@@ -17,6 +17,8 @@ Cause every developer needs one!
 - conky (widget)
 - mpv (Media Player)
 - ranger (File Manager)
+- rofi (Application Launcher)
+- Conky (Desktop Widget)
 
 ---
 
