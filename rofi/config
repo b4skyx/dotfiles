@@ -1,4 +1,4 @@
-rofi.modi: window,run,ssh
+rofi.modi: window,run,ssh,drun
 rofi.dpi: 120
 rofi.font: Hack 14
 rofi.terminal: alacritty

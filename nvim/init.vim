@@ -8,29 +8,36 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'cespare/vim-toml'
+
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'rust-lang/rust.vim'
-Plug 'tpope/vim-surround'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'bagrat/vim-buffet'
+Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
+Plug 'godlygeek/tabular'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
+Plug 'plasticboy/vim-markdown'
+
+Plug 'tpope/vim-surround'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'jreybert/vimagit'
-Plug 'lervag/vimtex'
 Plug 'LukeSmithxyz/vimling'
 Plug 'vimwiki/vimwiki'
-Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'vifm/vifm.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'bagrat/vim-buffet'
 call plug#end()
 
 set go=a
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
+
+
 
 " Some basics:
 	nnoremap c "_c
@@ -130,7 +137,7 @@ inoremap <silent><expr> <Tab>
 	set foldmethod=indent
 
 " Rust autofmt on save
-let g:rustfmt_autosave = 1
+	let g:rustfmt_autosave = 1
 
 " Markdown
 set conceallevel=2
@@ -146,3 +153,7 @@ autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
 
 " Save file as sudo on files that require root permission
 	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+let g:airline_powerline_fonts = 1
+let g:buffet_powerline_separators = 1
+nmap <leader>t :TagbarToggle<CR>
