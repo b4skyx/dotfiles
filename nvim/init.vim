@@ -8,17 +8,17 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
+Plug 'mhinz/vim-startify'
 Plug 'bagrat/vim-buffet'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
