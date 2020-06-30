@@ -5,7 +5,10 @@ cwd="$PWD"
 ln -sfn "$cwd"/nvim/init.vim ~/.config/nvim/init.vim
 ln -snf ~/.config/nvim/init.vim ~/.vimrc
 
-ln -sfn "$cwd"/alacritty ~/.config/alacritty
+# ln -sfn "$cwd"/alacritty ~/.config/alacritty
+ln -sfn "$cwd"/kitty ~/.config/kitty
+
+
 ln -sfn "$cwd"/.fonts ~/.fonts
 ln -sfn "$cwd"/conky ~/.config/conky
 ln -sfn "$cwd"/mpv ~/.config/mpv
