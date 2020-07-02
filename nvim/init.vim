@@ -155,5 +155,5 @@ autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
 	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 let g:airline_powerline_fonts = 1
-let g:buffet_powerline_separators = 1
+let g:buffet_powerline_separators = 0
 nmap <leader>t :TagbarToggle<CR>
