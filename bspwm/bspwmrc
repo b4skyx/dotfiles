@@ -1,0 +1,56 @@
+#!/bin/bash
+#### AUTOSTART ####
+
+# Daemons & stuff
+sxhkd &
+picom --experimental-backends &
+dunst &
+feh --bg-scale /data/Wallpapers/alone_grl.jpg &
+xfce4-power-manager &
+pidof bspswallow || bspswallow &
+
+#### MONITORS ####
+bspc monitor -d 1 2 3 4 5 6 7 8 9
+
+#### BSPWM configuration ####
+# bspc config border_radius                45
+bspc config border_width                  2
+bspc config window_gap                    3
+bspc config top_padding                   20
+bspc config top_monocle_padding 	  0
+bspc config bottom_padding                0
+bspc config left_padding                  0
+bspc config right_padding                 0
+bspc config single_monocle                true
+bspc config click_to_focus                false
+bspc config split_ratio                   0.50
+bspc config borderless_monocle            true
+bspc config gapless_monocle               true
+bspc config focus_by_distance             true
+bspc config paddingless_monocle  	  true
+bspc config focus_follows_pointer         true
+bspc config ignore_ewmh_focus 		  true
+bspc config history_aware_focus           true
+bspc config remove_disabled_monitors      true
+bspc config merge_overlapping_monitors    true
+bspc config pointer_modifier mod1
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
+
+# Rules
+
+bspc rule -a init_firefox desktop='^2'
+bspc rule -a discord desktop='^8'
+bspc rule -a feh state='floating'
+bspc rule -a mpv state='floating'
+bspc rule -a Pavucontrol state='floating'
+bspc rule -a flameshot state='floating'
+bspc rule -a *:SPLASH state=floating
+bspc desktop -f 1
+
+# AUTOSTART
+conky -c ~/.config/conky/system-all.conf &
+~/.config/polybar/launch.sh &
+firefox --class="init_firefox" &
+discord &

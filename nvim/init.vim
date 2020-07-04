@@ -15,13 +15,15 @@ Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'rafi/awesome-vim-colorschemes'
+" Plug 'rafi/awesome-vim-colorschemes'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'tpope/vim-surround'
 Plug 'rbgrouleff/bclose.vim'
@@ -43,8 +45,8 @@ set clipboard+=unnamedplus
 	nnoremap c "_c
 	set nocompatible
 	filetype plugin on
-	colorscheme PaperColor
 	set bg=dark
+	colorscheme dracula
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
@@ -154,6 +156,17 @@ autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
 " Save file as sudo on files that require root permission
 	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+
 let g:airline_powerline_fonts = 1
-let g:buffet_powerline_separators = 0
+let g:buffet_powerline_separators = 1
 nmap <leader>t :TagbarToggle<CR>
+
+" Dracula colorscheme
+let g:dracula_bold = 1
+let g:dracula_italic = 1
+let g:dracula_underline = 1
+let g:dracula_undercurl = 1
+let g:dracula_inverse = 1
+let g:dracula_colorterm = 1
