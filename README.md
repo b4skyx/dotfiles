@@ -11,6 +11,7 @@
 Cause every developer needs one!
 
 ### The following dotfiles contain configuration for
+- BSPWM (Window Mangaer)
 - nvim/vim
 - alacritty (Terminal)
 - zsh (shell)
@@ -21,6 +22,10 @@ Cause every developer needs one!
 - Conky (Desktop Widget)
 
 ---
+
+## Screenshot
+
+![current_setup](./current_state.png)
 
 ## Configuration
 
