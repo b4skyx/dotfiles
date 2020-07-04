@@ -24,3 +24,8 @@ ln -sfn "$cwd"/.config/picom ~/.config/picom
 ln -sfn "$cwd"/.config/rofi ~/.config/rofi
 
 ln -sfn "$cwd"/redshift.conf ~/.config/redshift.conf
+
+ln -sfn "$cwd"/.config/bspwm ~/.config/bspwm
+ln -sfn "$cwd"/.config/polybar ~/.config/polybar
+ln -sfn "$cwd"/.config/sxhkd ~/.config/sxhkd
+
