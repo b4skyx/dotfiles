@@ -15,15 +15,14 @@ Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'rafi/awesome-vim-colorschemes'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'ap/vim-css-color'
 
 Plug 'tpope/vim-surround'
 Plug 'rbgrouleff/bclose.vim'
@@ -31,14 +30,12 @@ Plug 'jreybert/vimagit'
 Plug 'LukeSmithxyz/vimling'
 Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-commentary'
-Plug 'vifm/vifm.vim'
 call plug#end()
 
 set go=a
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
-
 
 
 " Some basics:
@@ -142,6 +139,9 @@ inoremap <silent><expr> <Tab>
 	let g:rustfmt_autosave = 1
 
 " Markdown
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
 set conceallevel=2
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_new_list_item_indent = 0
@@ -159,14 +159,22 @@ autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 
-let g:airline_powerline_fonts = 1
+
+
+" let g:airline_powerline_fonts = 1
+let g:lightline = {
+  \ 'colorscheme': 'dracula'
+\}
+
+set termguicolors
+let g:dracula_bold      = 1
+let g:dracula_italic    = 1
+let g:dracula_underline = 1
+let g:dracula_undercurl = 1
+let g:dracula_inverse   = 1
+let g:dracula_colorterm = 1
+
+set noshowmode
 let g:buffet_powerline_separators = 1
 nmap <leader>t :TagbarToggle<CR>
 
-" Dracula colorscheme
-let g:dracula_bold = 1
-let g:dracula_italic = 1
-let g:dracula_underline = 1
-let g:dracula_undercurl = 1
-let g:dracula_inverse = 1
-let g:dracula_colorterm = 1

@@ -5,6 +5,7 @@
 sxhkd &
 picom --experimental-backends &
 dunst &
+redshift &
 feh --bg-scale /data/Wallpapers/alone_grl.jpg &
 xfce4-power-manager &
 pidof bspswallow || bspswallow &
@@ -50,7 +51,7 @@ bspc rule -a *:SPLASH state=floating
 bspc desktop -f 1
 
 # AUTOSTART
-conky -c ~/.config/conky/system-all.conf &
+~/.config/conky/start-conky.sh &
 ~/.config/polybar/launch.sh &
 firefox --class="init_firefox" &
 discord &

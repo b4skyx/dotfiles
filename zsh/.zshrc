@@ -64,5 +64,5 @@ alias :q='exit'
 alias ssh-public-key='cat ~/.ssh/id_rsa.pub'
 alias vim='nvim'
 alias whoneeds='pacman -Qi'
-alias notes='/data/workspace/notes/'
+alias notes='nvim /data/workspace/notes/index.md'
 #}}}
