@@ -138,6 +138,9 @@ inoremap <silent><expr> <Tab>
 " Rust autofmt on save
 	let g:rustfmt_autosave = 1
 
+" Word warp
+set wrap linebreak nolist
+
 " Markdown
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
