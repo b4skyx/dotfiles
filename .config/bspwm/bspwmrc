@@ -45,6 +45,7 @@ bspc rule -a init_firefox desktop='^2'
 bspc rule -a discord desktop='^8'
 bspc rule -a feh state='floating'
 bspc rule -a mpv state='floating'
+bspc rule -a Zathura state='tiled'
 bspc rule -a Pavucontrol state='floating'
 bspc rule -a flameshot state='floating'
 bspc rule -a *:SPLASH state=floating
