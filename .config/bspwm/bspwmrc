@@ -7,7 +7,6 @@ picom --experimental-backends &
 dunst &
 redshift &
 feh --bg-scale /data/Wallpapers/alone_grl.jpg &
-xfce4-power-manager &
 pidof bspswallow || bspswallow &
 
 #### MONITORS ####
