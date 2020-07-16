@@ -20,7 +20,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
-Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ap/vim-css-color'
 

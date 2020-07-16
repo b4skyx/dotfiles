@@ -1,5 +1,5 @@
 export LC_CTYPE=en_US.UTF-8
-export TERM='kitty'
+# export TERM='alacritty'
 #{{{ Base config, Plugins, modules, programs config
 source $HOME/.zsh-plugins/vi-mode.zsh/vi-mode.plugin.zsh
 source $HOME/.zsh-plugins/wbase.zsh/wbase.zsh
