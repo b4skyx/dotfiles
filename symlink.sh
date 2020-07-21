@@ -17,7 +17,7 @@ ln -sfn "$cwd"/.config/ranger ~/.config/ranger
 # Zsh
 ln -sfn "$cwd"/zsh/.zsh-plugins ~/.zsh-plugins
 ln -sfn "$cwd"/zsh/.zprofile ~/.zprofile
-ln -sfn "$cwd"/zsh/.zshenv ~/.zsenv
+ln -sfn "$cwd"/zsh/.zshenv ~/.zshenv
 ln -sfn "$cwd"/zsh/.zshrc ~/.zshrc
 
 ln -sfn "$cwd"/.config/picom ~/.config/picom
