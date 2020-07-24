@@ -7,7 +7,8 @@ Cause every developer needs one!
 ### The following dotfiles contain configuration for
 - BSPWM (Window Mangaer)
 - nvim/vim
-- alacritty (Terminal)
+- Kitty (Terminal)
+- Font (Fira Code // Open Sans // Roboto)
 - zsh (shell)
 - conky (widget)
 - mpv (Media Player)
