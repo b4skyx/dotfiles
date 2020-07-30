@@ -6,7 +6,7 @@ sxhkd &
 picom --experimental-backends &
 dunst &
 redshift &
-feh --bg-scale /data/Wallpapers/alone_grl.jpg &
+feh --bg-fill .config/wallpaper.jpg &
 pidof bspswallow || bspswallow &
 
 #### MONITORS ####
@@ -15,7 +15,7 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9
 #### BSPWM configuration ####
 # bspc config border_radius                45
 bspc config border_width                  2
-bspc config window_gap                    10
+bspc config window_gap                    0
 bspc config top_padding                   24
 bspc config top_monocle_padding 	  0
 bspc config bottom_padding                0
@@ -37,6 +37,10 @@ bspc config pointer_modifier mod1
 bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
 bspc config pointer_action3 resize_corner
+
+# Colors
+bspc config active_border_color \#D23D3D
+# bspc config normal_border_color \#D23D3D
 
 # Rules
 
