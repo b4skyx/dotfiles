@@ -7,11 +7,13 @@ It is heavily inspired by Olivier Verdier's [zsh-git-prompt](https://github.com/
 The structure of the prompt (in the default configuration) is the following:
 
 ```
-[<branch_name><tracking_status>|<local_status>]
+[<branch_name><upstream><tracking_status>|<local_status>]
 ```
 
 * `branch_name`: Name of the current branch or commit hash if HEAD is detached. When in 'detached HEAD' state, the
     `branch_name` will be prefixed with a colon `:` to indicate that it is actually a hash and not a branch name.
+* `upstream`: Name of the remote branch if it exist.
+    Must be enabled explicitly (see [Enable remote branch info](#enable-remote-branch-info)).
 * `tracking_status`:
     * `↑n`: ahead of remote by `n` commits
     * `↓n`: behind remote by `n` commits
@@ -30,7 +32,7 @@ The structure of the prompt (in the default configuration) is the following:
     You can check if your installation is compatible by executing `git status --branch --porcelain=v2` inside a Git repository.
 * [awk](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html), which is most certainly preinstalled on any \*nix system
 
-### Zplug
+### [Zplug](https://github.com/zplug/zplug)
 Either install the default prompt (see [Examples](#examples) section below) with
 ```
 # Installs the "default" example
@@ -41,6 +43,13 @@ or choose an example prompt with
 # Installs the "multiline" example
 zplug "woefe/git-prompt.zsh", use:"{git-prompt.zsh,examples/multiline.zsh}"
 ```
+
+### [Zplugin](https://github.com/zdharma/zplugin)
+```
+zplugin ice atload'!_zsh_git_prompt_precmd_hook' lucid
+zplugin load woefe/git-prompt.zsh
+```
+Note that this method does not work if you want to disable the asynchronous rendering.
 
 ### Arch Linux
 Install [git-prompt.zsh](https://aur.archlinux.org/packages/git-prompt.zsh/) or [git-prompt.zsh-git](https://aur.archlinux.org/packages/git-prompt.zsh-git/) from the AUR. Maintained by [Felixoid](https://github.com/Felixoid).
@@ -83,6 +92,12 @@ After you have found a configuration that you like, source it in your `.zshrc`.
 
 source examples/default.zsh
 ```
+#### Compact
+```zsh
+# ../git-prompt.zsh master↑1|●1✚1…1❯
+
+source examples/compact.zsh
+```
 
 #### Multi-line prompt
 ```zsh
@@ -115,7 +130,7 @@ source examples/pure.zsh
 If you want to try other examples again after sourcing the Pure example, you might have to restart your shell, because this prompt will always print a newline between prompts.
 
 #### Woefe's prompt (wprompt)
-The wprompt example is similar to the multi-line and Pure examples, but with optional [vi-mode](https://github.com/woefe/vi-mode.zsh).
+The wprompt example is similar to the multi-line and Pure examples, but with optional [vi-mode](https://github.com/woefe/vi-mode.zsh) and the secondary prompt enabled.
 
 - Depends on [Font Awesome](https://fontawesome.com/) for the Python symbol
 - Optionally depends on [vi-mode](https://github.com/woefe/vi-mode.zsh)
@@ -131,6 +146,19 @@ source examples/wprompt.zsh
 ```
 If you want to try other examples again after sourcing this example, you might have to restart your shell, because this prompt will always print a newline between prompts.
 
+### Enable secondary prompt
+The prompt comes with a secondary function that shows the tags that HEAD points to.
+Enabling this will execute another Git command every time a new prompt is shown!
+To use the secondary prompt you have to enable it and add the `'gitprompt_secondary'` function to your `PROMPT` or `RPROMPT` variables.
+You enable the secondary prompt by adding the following line to your `.zshrc`:
+
+```bash
+ZSH_GIT_PROMPT_ENABLE_SECONDARY=1
+```
+
+The secondary prompt uses the [label emoji](https://emojipedia.org/label/) by default.
+If you encounter problems with the label character, change it (see below) or install a font that can display it, for example [Unifont](https://savannah.gnu.org/projects/unifont) or [twemoji](https://github.com/eosrei/twemoji-color-font).
+
 ### Appearance
 The appearance of the prompt can be adjusted by changing the variables that start with `ZSH_THEME_GIT_PROMPT_`.
 Note that some of them are named differently than in the original Git prompt by Olivier Verdier.
@@ -140,11 +168,15 @@ But remember to save them in your `.zshrc` after you tweaked them to your liking
 Example snippet from `.zshrc`:
 
 ```zsh
+# Theming variables for primary prompt
 ZSH_THEME_GIT_PROMPT_PREFIX="["
 ZSH_THEME_GIT_PROMPT_SUFFIX="] "
 ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
 ZSH_THEME_GIT_PROMPT_DETACHED="%{$fg_bold[cyan]%}:"
 ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[magenta]%}"
+ZSH_THEME_GIT_PROMPT_UPSTREAM_SYMBOL="%{$fg_bold[yellow]%}⟳ "
+ZSH_THEME_GIT_PROMPT_UPSTREAM_PREFIX="%{$fg[red]%}(%{$fg[yellow]%}"
+ZSH_THEME_GIT_PROMPT_UPSTREAM_SUFFIX="%{$fg[red]%})"
 ZSH_THEME_GIT_PROMPT_BEHIND="↓"
 ZSH_THEME_GIT_PROMPT_AHEAD="↑"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[red]%}✖"
@@ -153,12 +185,25 @@ ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg[red]%}✚"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="…"
 ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[blue]%}⚑"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
+
+# Theming variables for the secondary prompt
+ZSH_THEME_GIT_PROMPT_SECONDARY_PREFIX=""
+ZSH_THEME_GIT_PROMPT_SECONDARY_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_TAGS_SEPARATOR=", "
+ZSH_THEME_GIT_PROMPT_TAGS_PREFIX="🏷 "
+ZSH_THEME_GIT_PROMPT_TAGS_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_TAG="%{$fg_bold[magenta]%}"
 source path/to/git-prompt.zsh
 ```
 
+### Enable remote branch info
+The prompt will show information about the remote branch, if `ZSH_GIT_PROMPT_SHOW_UPSTREAM` is set to `full` or `symbol`.
+The `full` option will print the full remote branch name enclosed by `ZSH_THEME_GIT_PROMPT_UPSTREAM_PREFIX` and `ZSH_THEME_GIT_PROMPT_UPSTREAM_SUFFIX`.
+The `symbol` option prints only `ZSH_THEME_GIT_PROMPT_UPSTREAM_SYMBOL`.
+
 ### Show number of stash entries
 The number of stash entries will be shown if `ZSH_GIT_PROMPT_SHOW_STASH` is set.
-Enabling this will execute a second Git command every time a new prompt is shown!
+Enabling this will execute another Git command every time a new prompt is shown!
 To enable stash entries add the following line to your `.zshrc`:
 
 ```bash

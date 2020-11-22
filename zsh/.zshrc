@@ -17,7 +17,7 @@ fi
 
 # Prompt: git status, hostname for ssh sessions, vi mode indicator
 source $HOME/.zsh-plugins/git-prompt.zsh/git-prompt.zsh
-source $HOME/.zsh-plugins/git-prompt.zsh/examples/rprompt.zsh
+source $HOME/.zsh-plugins/git-prompt.zsh/examples/wprompt.zsh
 
 # Enable syntax highlighting. Must be loaded after all `zle -N` calls (see
 # https://github.com/zsh-users/zsh-syntax-highlighting#faq)
@@ -48,14 +48,13 @@ bindkey '^f' autosuggest-accept
 bindkey -M vicmd 'V' edit-command-line
 #}}}
 
+cc() python3 -c "from math import *; print($*);"
+alias calc='noglob cc'
 #{{{ Aliases
 alias ...='cd ../..'
-alias cpstat='rsync -haP'
-alias datea='date +%F'
 alias g='git'
 alias d='sudo docker'
 alias grep='grep --color=auto'
-alias ip='ip -c'
 alias la='ls -lah --color=auto'
 alias lh='ls -lh --color=auto'
 alias ls='ls --color=auto'

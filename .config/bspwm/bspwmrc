@@ -14,9 +14,10 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9
 
 #### BSPWM configuration ####
 # bspc config border_radius                45
+bspc config window_gap 			  10
 bspc config border_width                  2
 bspc config window_gap                    0
-bspc config top_padding                   24
+bspc config top_padding                   22
 bspc config top_monocle_padding 	  0
 bspc config bottom_padding                0
 bspc config left_padding                  0
@@ -45,6 +46,7 @@ bspc config active_border_color \#D23D3D
 # Rules
 
 bspc rule -a init_firefox desktop='^2'
+bspc rule -a init_vivaldi desktop='^2'
 bspc rule -a discord desktop='^8'
 bspc rule -a feh state='floating'
 bspc rule -a mpv state='floating'
@@ -57,5 +59,6 @@ bspc desktop -f 1
 # AUTOSTART
 ~/.config/conky/start-conky.sh &
 ~/.config/polybar/launch.sh &
-firefox --class="init_firefox" &
-discord &
+# firefox --class="init_firefox" &
+vivaldi-stable --class="init_vivaldi" &
+# discord &

@@ -13,8 +13,10 @@ Plug 'bagrat/vim-buffet'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 
 Plug 'rust-lang/rust.vim'
@@ -35,6 +37,17 @@ set go=a
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
+set hidden                              " Required to keep multiple buffers open multiple buffers
+set ruler              			            " Show the cursor position all the time
+set splitright                          " Vertical splits will automatically be to the right
+set t_Co=256                            " Support 256 colors
+set autoindent                          " Good auto indent
+set nobackup                            " This is recommended by coc
+set nowritebackup                       " This is recommended by coc
+set updatetime=300                      " Faster completion
+set timeoutlen=500                      " By default timeoutlen is 1000 ms
+set formatoptions-=cro                  " Stop newline continution of comments
+set cursorline                          " Enable highlighting of the current line
 
 
 " Some basics:
@@ -42,7 +55,7 @@ set clipboard+=unnamedplus
 	set nocompatible
 	filetype plugin on
 	set bg=dark
-	colorscheme dracula
+	colorscheme nord
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
@@ -82,7 +95,7 @@ set clipboard+=unnamedplus
 	map <leader>p :!opout <c-r>%<CR><CR>
 
 " Ensure files are read as what I want:
-	" let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
 
@@ -112,6 +125,8 @@ set clipboard+=unnamedplus
 	nmap <leader>8 <Plug>BuffetSwitch(8)
 	nmap <leader>9 <Plug>BuffetSwitch(9)
 	nmap <leader>0 <Plug>BuffetSwitch(10)
+let g:buffet_powerline_separators = 0
+let g:buffet_use_devicons = 1
 
 noremap <Tab> :bn<CR>
 noremap <S-Tab> :bp<CR>
@@ -139,6 +154,7 @@ inoremap <silent><expr> <Tab>
 
 " Word warp
 set wrap linebreak nolist
+set nowrap
 
 " Markdown
 let g:vimwiki_list = [{'path': '~/vimwiki/',
@@ -165,18 +181,9 @@ let g:NERDTreeDirArrowCollapsible = ''
 
 " let g:airline_powerline_fonts = 1
 let g:lightline = {
-  \ 'colorscheme': 'dracula'
+  \ 'colorscheme': 'nord'
 \}
 
-set termguicolors
-let g:dracula_bold      = 1
-let g:dracula_italic    = 1
-let g:dracula_underline = 1
-let g:dracula_undercurl = 1
-let g:dracula_inverse   = 1
-let g:dracula_colorterm = 1
-
 set noshowmode
-let g:buffet_powerline_separators = 1
 nmap <leader>t :TagbarToggle<CR>
 

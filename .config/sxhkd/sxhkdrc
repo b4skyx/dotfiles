@@ -24,6 +24,9 @@ Print
 super + Escape
 	pkill -USR1 -x sxhkd
 
+super + shift + Escape
+	~/.config/polybar/launch.sh
+
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
@@ -55,6 +58,8 @@ super + g
 # set the window state
 super + {i,shift + i,shift+space}
 	bspc node -t {tiled,pseudo_tiled,floating}
+super + o
+	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -139,3 +144,9 @@ XF86MonBrightnessUp
 ## Personal scripts
 super + l
 	~/.local/bin/dpass
+
+## Dropdown
+super + shift + m
+	tdrop -am -w 60% -h 60% kitty -e cmus
+super + shift + Return
+	tdrop -am -w 1000 -h 700 -x 23% -y 17% -n 1 kitty
