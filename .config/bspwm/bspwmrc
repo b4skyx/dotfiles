@@ -18,7 +18,7 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9
 bspc config window_gap 			  10
 bspc config top_padding                   22
 bspc config top_monocle_padding 	  0
-bspc config border_width 		  3
+bspc config border_width 		  2
 bspc config bottom_padding                0
 bspc config left_padding                  0
 bspc config right_padding                 0
