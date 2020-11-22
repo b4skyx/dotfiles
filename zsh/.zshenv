@@ -1,6 +1,7 @@
-autoload -U path
-path=(~/.bin ~/.local/bin ~/.gem/ruby/2.5.0/bin $path[@])
+typeset -U PATH path
+path=(~/.bin ~/.local/bin ~/.local/scripts/ $path[@] )
 fpath=(~/.zsh-plugins/zsh-completions/src $fpath)
+export PATH
 
 export EDITOR='nvim'
 export BROWSER='firefox'
