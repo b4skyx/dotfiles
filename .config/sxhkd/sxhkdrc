@@ -56,13 +56,21 @@ super + g
 	bspc node -s biggest.local
 
 # set the window state
-super + {i,shift + i,shift+space}
-	bspc node -t {tiled,pseudo_tiled,floating}
+# super + {i,shift + i,shift+space}
+# 	bspc node -t {tiled,pseudo_tiled,floating}
 super + o
 	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+super + i
+	bspc node focused.tiled -t pseudo_tiled || bspc node -t tiled
+
+super + {_, shift} + h
+	{bsphide, bspunhide}
+
+super + shift + r
+	bspc node @/ -R 90
 
 # set the node flags
-super + ctrl + {m,x,y,z}
+super + ctrl + {m,l,s,p}
 	bspc node -g {marked,locked,sticky,private}
 #send node to next/previous window
 super + {_, shift} + k
@@ -75,7 +83,7 @@ super + {_,shift + }{Left, Down, Up, Right}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
+super + shift + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
@@ -110,17 +118,16 @@ super + ctrl + shift + space
 
 #----~ Movement/Resizing ~----#
 
-# expand a window by moving one of its side outward
-super + alt + shift + {Left, Down, Up, Right}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+# resize
+super + e : {Left,Top,Bottom,Right}
+    bspwm_resize expand {west,south,north,east} 25
 
-# contract a window by moving one of its side inward
-super + alt + {Left, Down, Up, Right}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+super + shift + e : {Left,Top,Bottom,Right}
+    bspwm_resize contract {east,south,north,west} 25
 
 # move a floating window
-super + {Left, Down, Up, Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+super + alt + {Left, Down, Up, Right}
+	bspc node -v {-50 0,0 50,0 -50,50 0}
 
 
 ###################################
@@ -146,7 +153,9 @@ super + l
 	~/.local/bin/dpass
 
 ## Dropdown
-super + shift + m
-	tdrop -am -w 60% -h 60% kitty -e cmus
+super + alt + m
+	tdrop -am -w 1000 -h 650 -x 23% -y 17% kitty -e cmus
 super + shift + Return
-	tdrop -am -w 1000 -h 700 -x 23% -y 17% -n 1 kitty
+	tdrop -am -w 1000 -h 650 -x 23% -y 17% -n 1 kitty
+super + r
+	tdrop -am -w 1000 -h 650 -x 23% -y 17% -n 2 kitty -e ranger
