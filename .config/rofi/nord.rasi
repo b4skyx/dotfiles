@@ -1,0 +1,89 @@
+* {
+    nord0: #2e3440;
+    nord1: #3b4252;
+    nord2: #434c5e;
+    nord3: #4c566a;
+    nord4: #d8dee9;
+    nord5: #e5e9f0;
+    nord6: #eceff4;
+    nord7: #8fbcbb;
+    nord8: #88c0d0;
+    nord9: #81a1c1;
+    nord10: #5e81ac;
+    nord11: #bf616a;
+    nord12: #d08770;
+    nord13: #ebcb8b;
+    nord14: #a3be8c;
+    nord15: #b48ead;
+
+    background-color: @nord1;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    spacing: 0px;
+    text-color: @nord4;
+}
+#inputbar {
+    text-color: @nord3;
+    padding: 6px;
+    margin: 0px 0px 2px;
+    children: [ entry ];
+}
+#entry {
+    background-color: @nord3;
+    text-color: @nord4;
+    padding: 5px;
+}
+#message {
+    border: 0px 0px 1px;
+    border-color: @nord3;
+    padding: 0px 0px 6px 7px;
+}
+#listview {
+    lines: 10;
+    padding: 2px 0px 0px;
+    scrollbar: true;
+}
+#element {
+    padding: 0px 0px 0px 7px;
+    margin: 0px 0px 5px 0px;
+    text-color: @nord4;
+}
+#element.normal.normal {
+    text-color: @nord4;
+}
+#element.normal.urgent {
+    text-color: @nord11;
+}
+#element.normal.active {
+    text-color: @nord10;
+}
+#element.alternate.normal {
+    text-color: @nord4;
+}
+#element.alternate.urgent {
+    text-color: @nord11;
+}
+#element.alternate.active {
+    text-color: @nord10;
+}
+#element.selected.normal {
+    background-color: @nord8;
+    text-color: @nord1;
+}
+#element.selected.urgent {
+    background-color: @nord11;
+    text-color: @nord4;
+}
+#element.selected.active {
+    background-color: @nord10;
+    text-color: @nord4;
+}
+#scrollbar {
+    handle-color: @nord3;
+    handle-width: 0.50em;
+}
+#button.selected {
+    background-color: @nord8;
+    text-color: @nord4;
+}
