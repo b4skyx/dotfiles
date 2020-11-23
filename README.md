@@ -18,6 +18,7 @@
 | System and terminal font            | [Victor Mono](https://rubjo.github.io/victor-mono/)                                            |
 | Shell                               | [zsh](https://www.zsh.org/)                                                                    |
 | Terminal Emulator                   | [Kitty](https://sw.kovidgoyal.net/kitty/)                                                      |
+| Document Viewer                     | [Zathura](https://pwmt.org/projects/zathura/)                                                  |
 | Main Code Editor                    | [Nvim](https://neovim.io/)                                                                     |
 | Music Player                        | [cmus](https://cmus.github.io) [Spotify](https://www.spotify.com)                              |
 

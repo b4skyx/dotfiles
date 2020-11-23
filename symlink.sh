@@ -24,6 +24,7 @@ ln -sfn "$cwd"/zsh/.zshrc ~/.zshrc
 
 ln -sfn "$cwd"/.config/picom ~/.config/picom
 ln -sfn "$cwd"/.config/rofi ~/.config/rofi
+ln -sfn "$cwd"/.config/zathura ~/.config/zathura
 
 ln -sfn "$cwd"/redshift.conf ~/.config/redshift.conf
 
