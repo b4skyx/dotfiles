@@ -119,11 +119,17 @@ super + ctrl + shift + space
 #----~ Movement/Resizing ~----#
 
 # resize
-super + e : {Left,Top,Bottom,Right}
+super + e : {Left, Down, Up, Right}
     bspwm_resize expand {west,south,north,east} 25
 
-super + shift + e : {Left,Top,Bottom,Right}
-    bspwm_resize contract {east,south,north,west} 25
+super + shift + e : {Left, Down, Up, Right}
+    bspwm_resize contract {east,north,south,west} 25
+
+super + alt + {Left, Down, Up, Right}
+    bspwm_resize expand {west,south,north,east} 25
+
+super + alt + ctrl + {Left, Down, Up, Right}
+    bspwm_resize contract {east,north,south,west} 25
 
 # move a floating window
 super + alt + {Left, Down, Up, Right}
