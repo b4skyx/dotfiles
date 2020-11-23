@@ -46,16 +46,3 @@ map <C-=> zoom in
 map <C--> zoom out
 map B jumplist backward
 map b jumplist forward
-
-# Startup options
-#
-#
-set adjust-open width
-set recolor true
-
-map <Left> navigate previous
-map <Right> navigate next
-map <C-=> zoom in
-map <C--> zoom out
-map B jumplist backward
-map b jumplist forward
