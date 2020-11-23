@@ -27,14 +27,14 @@
 ![Home](./assets/home.png)
 
 ## Code Editor
-![Code Editor](.assets/nvim.png)
+![Code Editor](./assets/nvim.png)
 
 ## Windows - Tiled
-![Windows-T](.assets/windows.png)
+![Windows-T](./assets/windows.png)
 
 # Windows - Floating
-![Windows-F](.assets/vivaldi-pulsemixer.png)
+![Windows-F](./assets/vivaldi-pulsemixer.png)
 
 ## Spotify
 Nord theme from spicetify
-![Spotify](.assets/spotify.png)
+![Spotify](./assets/spotify.png)
