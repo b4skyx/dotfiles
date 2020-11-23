@@ -39,3 +39,6 @@
 ## Spotify
 Nord theme from spicetify
 ![Spotify](./assets/spotify.png)
+
+# [Wallpaper]
+![Wallpaper](./assets/wallpaper.png)
