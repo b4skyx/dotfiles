@@ -31,3 +31,5 @@ ln -sfn "$cwd"/redshift.conf ~/.config/redshift.conf
 ln -sfn "$cwd"/.config/bspwm ~/.config/bspwm
 ln -sfn "$cwd"/.config/polybar ~/.config/polybar
 ln -sfn "$cwd"/.config/sxhkd ~/.config/sxhkd
+
+ln -sfn "$cwd"/scripts ~/.local/scripts
