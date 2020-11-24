@@ -1,0 +1,13 @@
+#!/bin/sh
+# Simple script to hide all he nodes on a desktop
+
+NODES=$(bspc query -N -n .hidden -d focused)
+
+# Show bar if it's running
+if pgrep "polybar"; then
+  polybar-msg cmd show
+fi
+
+for node in $NODES; do
+  bspc node $node -g hidden=off
+done

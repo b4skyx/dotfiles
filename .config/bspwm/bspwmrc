@@ -8,7 +8,6 @@ dunst &
 redshift &
 feh --bg-fill .config/wallpaper.jpg &
 setxkbmap -option caps:escape
-pidof bspswallow || bspswallow &
 
 #### MONITORS ####
 bspc monitor -d 1 2 3 4 5 6 7 8 9
@@ -70,4 +69,5 @@ bspc desktop -f 1
 ~/.config/polybar/launch.sh &
 # firefox --class="init_firefox" &
 vivaldi-stable --class="init_vivaldi" &
+pidof bspswallow || bspswallow &
 # discord &
