@@ -161,9 +161,6 @@ super + l
 ## Dropdown
 super + alt + m
 	tdrop -am -w 1000 -h 650 -x 23% -y 17% kitty -e cmus
-super + alt + p
-	tdrop -am -w 1000 -h 650 -x 23% -y 17% -n 3 kitty -e pulsemixer
-
 super + shift + Return
 	tdrop -am -w 1000 -h 650 -x 23% -y 17% -n 1 kitty
 super + r
