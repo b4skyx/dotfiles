@@ -8,7 +8,6 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'mhinz/vim-startify'
 Plug 'bagrat/vim-buffet'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
@@ -20,9 +19,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 
 Plug 'rust-lang/rust.vim'
-Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ap/vim-css-color'
 
 Plug 'tpope/vim-surround'
