@@ -1,186 +1,187 @@
 let mapleader =","
 let maplocalleader = "\\"
 
+" Vim-Plug init
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
 	silent !mkdir -p ~/.config/nvim/autoload/
 	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
 endif
 
+" Vim-Plug Plugins
+
 call plug#begin('~/.config/nvim/plugged')
-Plug 'bagrat/vim-buffet'
+Plug 'arcticicestudio/nord-vim'
+Plug 'ryanoasis/vim-devicons'
+
+" Plug 'bagrat/vim-buffet'
+Plug 'godlygeek/tabular'
+Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
-Plug 'godlygeek/tabular'
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'airblade/vim-gitgutter'
+
+Plug 'rbgrouleff/bclose.vim'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+
+Plug 'jreybert/vimagit'
+Plug 'vimwiki/vimwiki'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'arcticicestudio/nord-vim'
-Plug 'itchyny/lightline.vim'
-
 Plug 'rust-lang/rust.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'ap/vim-css-color'
 
-Plug 'tpope/vim-surround'
-Plug 'rbgrouleff/bclose.vim'
-Plug 'jreybert/vimagit'
-Plug 'LukeSmithxyz/vimling'
-Plug 'vimwiki/vimwiki'
-Plug 'tpope/vim-commentary'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 call plug#end()
 
-set go=a
-set mouse=a
-set nohlsearch
-set clipboard+=unnamedplus
-set hidden                              " Required to keep multiple buffers open multiple buffers
-set ruler              			            " Show the cursor position all the time
-set splitright                          " Vertical splits will automatically be to the right
-set t_Co=256                            " Support 256 colors
-set autoindent                          " Good auto indent
-set nobackup                            " This is recommended by coc
-set nowritebackup                       " This is recommended by coc
-set updatetime=300                      " Faster completion
-set timeoutlen=500                      " By default timeoutlen is 1000 ms
-set formatoptions-=cro                  " Stop newline continution of comments
-set cursorline                          " Enable highlighting of the current line
-
-
-" Some basics:
-	nnoremap c "_c
-	set nocompatible
-	filetype plugin on
+" vim-interface
+	set hidden
+	set ruler
+	set cursorline
+	set number relativenumber
 	set bg=dark
 	colorscheme nord
+	set cmdheight=1
+	set noshowmode
+
+" Behavior
 	syntax on
+	set mouse=a
 	set encoding=utf-8
-	set number relativenumber
-" Enable autocompletion:
-	set wildmode=longest,list,full
+	filetype plugin on
+	set timeoutlen=500
+	set splitbelow splitright
+	set foldmethod=indent
+	set conceallevel=2
+	set autoindent
+	set wrap linebreak nolist
+	set shortmess+=c
+	nnoremap c "_c
+
+	" Rust autofmt on save
+	let g:rustfmt_autosave = 1
+
+	set nobackup
+	set nowritebackup
+
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Spell-check set to <leader>o, 'o' for 'orthography':
-	map <leader>o :setlocal spell! spelllang=en_us<CR>
+" Command Completion
+	set wildmenu
+	set wildmode=longest:full,full
 
-" Splits open at the bottom and right, unlike vim defaults.
-	set splitbelow splitright
+" Clipboard
+	set go=a
+	set clipboard+=unnamedplus
+	vnoremap  <leader>y  "+y
+	nnoremap  <leader>Y  "+yg_
+	nnoremap  <leader>y  "+y
+	nnoremap  <leader>yy  "+yy
+	nnoremap <leader>p "+p
+	nnoremap <leader>P "+P
+	vnoremap <leader>p "+p
+	vnoremap <leader>P "+P
 
 " Nerd tree
 	map <leader>n :NERDTreeToggle<CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 	let NERDTreeMinimalUI = 1
 	let NERDTreeDirArrows = 1
-" vimling:
-	nm <leader>d :call ToggleDeadKeys()<CR>
-	imap <leader>d <esc>:call ToggleDeadKeys()<CR>a
-	nm <leader>i :call ToggleIPA()<CR>
-	imap <leader>i <esc>:call ToggleIPA()<CR>a
-	nm <leader>q :call ToggleProse()<CR>
 
-" Shortcutting split navigation, saving a keypress:
+" TagBar
+	nmap <leader>t :TagbarToggle<CR>
+
+" Spell-check set to <leader>o, 'o' for 'orthography':
+	map <leader>o :setlocal spell! spelllang=en_us<CR>
+
+" Split Navigation shortcuts
 	map <C-h> <C-w>h
 	map <C-j> <C-w>j
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
 
+" Keep selection after shift
+	vnoremap < <gv
+	vnoremap > >gv
+
+" COc Tab Compleltion
+	inoremap <silent><expr> <TAB>
+	      \ pumvisible() ? "\<C-n>" :
+	      \ <SID>check_back_space() ? "\<TAB>" :
+	      \ coc#refresh()
+	inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+	function! s:check_back_space() abort
+	  let col = col('.') - 1
+	  return !col || getline('.')[col - 1]  =~# '\s'
+	endfunction
+
+
+
 " Replace all is aliased to S.
 	nnoremap S :%s//g<Left><Left>
-
-" Open corresponding .pdf/.html or preview
-	map <leader>p :!opout <c-r>%<CR><CR>
-
-" Ensure files are read as what I want:
-	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
-	autocmd BufRead,BufNewFile *.tex set filetype=tex
-
-" Copy to clipboard:
-	vnoremap  <leader>y  "+y
-	nnoremap  <leader>Y  "+yg_
-	nnoremap  <leader>y  "+y
-	nnoremap  <leader>yy  "+yy
-
-" Paste from clipboard:
-	nnoremap <leader>p "+p
-	nnoremap <leader>P "+P
-	vnoremap <leader>p "+p
-	vnoremap <leader>P "+P
 
 " Automatically deletes all trailing whitespace on save.
 	autocmd BufWritePre * %s/\s\+$//e
 
-" Vim Buffet:
-	nmap <leader>1 <Plug>BuffetSwitch(1)
-	nmap <leader>2 <Plug>BuffetSwitch(2)
-	nmap <leader>3 <Plug>BuffetSwitch(3)
-	nmap <leader>4 <Plug>BuffetSwitch(4)
-	nmap <leader>5 <Plug>BuffetSwitch(5)
-	nmap <leader>6 <Plug>BuffetSwitch(6)
-	nmap <leader>7 <Plug>BuffetSwitch(7)
-	nmap <leader>8 <Plug>BuffetSwitch(8)
-	nmap <leader>9 <Plug>BuffetSwitch(9)
-	nmap <leader>0 <Plug>BuffetSwitch(10)
-let g:buffet_powerline_separators = 0
-let g:buffet_use_devicons = 1
-
-noremap <Tab> :bn<CR>
-noremap <S-Tab> :bp<CR>
-noremap <Leader><Tab> :Bw<CR>
-noremap <Leader><S-Tab> :Bw!<CR>
-noremap <C-t> :tabnew split<CR>
-
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-" Coc autocompletion on Tab
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
-
-" Enable folding
-	set foldmethod=indent
-
-" Rust autofmt on save
-	let g:rustfmt_autosave = 1
-
-" Word warp
-set wrap linebreak nolist
-set nowrap
-
 " Markdown
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+	let g:vimwiki_list = [{'path': '~/vimwiki/',
+				\ 'syntax': 'markdown', 'ext': '.md'}]
+" GitGutter
+	nmap ) <Plug>(GitGutterNextHunk)
+	nmap ( <Plug>(GitGutterPrevHunk)
+	let g:gitgutter_enabled = 1
+	let g:gitgutter_map_keys = 0
+	let g:gitgutter_highlight_linenrs = 1
 
-set conceallevel=2
-let g:vim_markdown_conceal_code_blocks = 0
-let g:vim_markdown_new_list_item_indent = 0
-let g:vim_markdown_auto_insert_bullets = 1
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_fenced_languages = ['csharp=cs', 'rust=rs']
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_strikethrough = 1
-let g:vim_markdown_autowrite = 1
-autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
+" Goyo
+	noremap <leader>g :Goyo<CR>
 
-" Save file as sudo on files that require root permission
-	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+" Lightline
+	let g:lightline = {}
+	let g:lightline.enable = {'statusline': 1,'tabline': 1}
+	let g:lightline.colorscheme = 'nord'
+	let g:lightline.active = { 'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ] }
+	let g:lightline.tabline= {'left': [ ['buffers'] ],'right': [ ['close'] ]}
+	let g:lightline.component_raw = {'buffers': 1}
+	let g:lightline.component_expand= {'buffers': 'lightline#bufferline#buffers'}
+	let g:lightline.component_type = {'buffers': 'tabsel'}
+	let g:lightline.component_function = { 'filetype': 'MyFiletype','fileformat': 'MyFileformat',}
+	let g:lightline#bufferline#show_number = 2
+	let g:lightline#bufferline#unnamed = "untitled"
+	let g:lightline#bufferline#enable_devicons = 1
+	let g:lightline#bufferline#unicode_symbols = 1
+	let g:lightline#bufferline#clickable = 1
 
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
+	function! MyFiletype()
+	 return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+	endfunction
 
+	function! MyFileformat()
+	 return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+	endfunction
 
+" Buffer Mappings
+	nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+	nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+	nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+	nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+	nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+	nmap <Leader>6 <Plug>lightline#bufferline#go(6)
+	nmap <Leader>7 <Plug>lightline#bufferline#go(7)
+	nmap <Leader>8 <Plug>lightline#bufferline#go(8)
+	nmap <Leader>9 <Plug>lightline#bufferline#go(9)
+	nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
-" let g:airline_powerline_fonts = 1
-let g:lightline = {
-  \ 'colorscheme': 'nord'
-\}
-
-set noshowmode
-nmap <leader>t :TagbarToggle<CR>
+"Buffer Navigation
+	noremap <Tab> :bn<CR>
+	noremap <S-Tab> :bp<CR>
+	noremap <Leader><Tab> :Bw<CR>
+	noremap <Leader><S-Tab> :Bw!<CR>
+	noremap <C-t> :tabnew split<CR>
 

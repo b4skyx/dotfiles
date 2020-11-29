@@ -48,8 +48,10 @@ super + {grave,Tab}
 #----~ Workspace Management ~----#
 
 # alternate between the tiled and monocle layout
-super + f
+super + m
 	bspc desktop -l next
+super + f
+	bspc node -t \~fullscreen
 
 # swap the current node and the biggest local node
 super + g
@@ -64,7 +66,7 @@ super + i
 	bspc node focused.tiled -t pseudo_tiled || bspc node -t tiled
 
 super + {_, shift} + h
-	{bsphide, bspunhide}
+	{bspc node --flag hidden=on, bspunhide}
 
 super + shift + r
 	bspc node @/ -R 90
