@@ -33,7 +33,7 @@
 ## Windows - Tiled
 ![Windows-T](./assets/windows.png)
 
-# Windows - Floating
+## Windows - Floating
 ![Windows-F](./assets/vivaldi-pulsemixer.png)
 
 ## Spotify
