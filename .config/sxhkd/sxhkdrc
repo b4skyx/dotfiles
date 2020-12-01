@@ -162,7 +162,7 @@ super + l
 
 ## Dropdown
 super + alt + m
-	tdrop -am -w 1000 -h 650 -x 23% -y 17% kitty -e cmus
+	tdrop -am -w 1000 -h 650 -x 23% -y 17% kitty -e ncmpcpp
 super + alt + p
 	tdrop -am -w 1000 -h 650 -x 23% -y 17% -n 2 kitty -e pulsemixer
 super + shift + Return

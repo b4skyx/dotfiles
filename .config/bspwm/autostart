@@ -1,0 +1,9 @@
+#!/bin/sh
+pgrep redshift || redshift &
+pgrep mpd || mpd &
+pgrep mpd-mpris || mpd-mpris &
+pgrep bspswallow || bspswallow &
+
+# Applications
+~/.config/conky/start-conky.sh &
+firefox --class="init_firefox" &
