@@ -8,7 +8,7 @@ picom --experimental-backends &
 dunst &
 feh --bg-fill .config/wallpaper.jpg &
 setxkbmap -option caps:escape
-~/.config/polybar/launch.sh &
+~/Polybar/launch.sh &
 
 #### MONITORS ####
 bspc monitor -d 1 2 3 4 5 6 7 8 9
@@ -30,7 +30,7 @@ bspc config border_width 		  2
 bspc config bottom_padding                0
 bspc config left_padding                  0
 bspc config right_padding                 0
-bspc config single_monocle                true
+bspc config single_monocle                false
 bspc config click_to_focus                false
 bspc config split_ratio                   0.50
 bspc config borderless_monocle            true

@@ -25,7 +25,7 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 super + shift + Escape
-	~/.config/polybar/launch.sh
+	~/Polybar/launch.sh
 
 # quit/restart bspwm
 super + alt + {q,r}
@@ -60,7 +60,7 @@ super + g
 # set the window state
 # super + {i,shift + i,shift+space}
 # 	bspc node -t {tiled,pseudo_tiled,floating}
-super + o
+super + u
 	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
 super + i
 	bspc node focused.tiled -t pseudo_tiled || bspc node -t tiled
@@ -160,12 +160,18 @@ XF86MonBrightnessUp
 super + l
 	~/.local/bin/dpass
 
+## Music Controls
+super  + {less, greater, question}
+	playerctl {previous, next, play-pause}
+
+## Open Applications
+
+## Tdrop, a drop down terminal to act like a scratchpad. Check scripts
+super + o; {w, p, r}
+	{firefox, tdrop_c -n 1 kitty -e pulsemixer, tdrop_c -n 2 kitty -e ranger}
+
 ## Dropdown
 super + alt + m
 	tdrop -am -w 1000 -h 650 -x 23% -y 17% kitty -e ncmpcpp
-super + alt + p
-	tdrop -am -w 1000 -h 650 -x 23% -y 17% -n 2 kitty -e pulsemixer
 super + shift + Return
 	tdrop -am -w 1000 -h 650 -x 23% -y 17% -n 1 kitty
-super + r
-	tdrop -am -w 1000 -h 650 -x 23% -y 17% -n 2 kitty -e ranger

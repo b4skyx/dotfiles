@@ -32,6 +32,7 @@ Plug 'vimwiki/vimwiki'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
 Plug 'ap/vim-css-color'
 
@@ -184,4 +185,6 @@ call plug#end()
 	noremap <Leader><Tab> :Bw<CR>
 	noremap <Leader><S-Tab> :Bw!<CR>
 	noremap <C-t> :tabnew split<CR>
+
+set list lcs=tab:\|\ ""
 
