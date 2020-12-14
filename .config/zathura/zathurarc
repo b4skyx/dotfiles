@@ -1,38 +1,43 @@
-# Base16 Nord
-# Author: arcticicestudio
+set notification-error-bg       "#282828" # bg
+set notification-error-fg       "#fb4934" # bright:red
+set notification-warning-bg     "#282828" # bg
+set notification-warning-fg     "#fabd2f" # bright:yellow
+set notification-bg             "#282828" # bg
+set notification-fg             "#b8bb26" # bright:green
 
-set default-bg                  "#2E3440"
-set default-fg                  "#3B4252"
+set completion-bg               "#504945" # bg2
+set completion-fg               "#ebdbb2" # fg
+set completion-group-bg         "#3c3836" # bg1
+set completion-group-fg         "#928374" # gray
+set completion-highlight-bg     "#83a598" # bright:blue
+set completion-highlight-fg     "#504945" # bg2
 
-set statusbar-fg                "#D8DEE9"
-set statusbar-bg                "#434C5E"
+# Define the color in index mode
+set index-bg                    "#504945" # bg2
+set index-fg                    "#ebdbb2" # fg
+set index-active-bg             "#83a598" # bright:blue
+set index-active-fg             "#504945" # bg2
 
-set inputbar-bg                 "#2E3440"
-set inputbar-fg                 "#8FBCBB"
+set inputbar-bg                 "#282828" # bg
+set inputbar-fg                 "#ebdbb2" # fg
 
-set notification-bg             "#2E3440"
-set notification-fg             "#8FBCBB"
+set statusbar-bg                "#504945" # bg2
+set statusbar-fg                "#ebdbb2" # fg
 
-set notification-error-bg       "#2E3440"
-set notification-error-fg       "#BF616A"
+set highlight-color             "#fabd2f" # bright:yellow
+set highlight-active-color      "#fe8019" # bright:orange
 
-set notification-warning-bg     "#2E3440"
-set notification-warning-fg     "#BF616A"
+set default-bg                  "#282828" # bg
+set default-fg                  "#ebdbb2" # fg
+set render-loading              true
+set render-loading-bg           "#282828" # bg
+set render-loading-fg           "#ebdbb2" # fg
 
-set highlight-color             "#EBCB8B"
-set highlight-active-color      "#81A1C1"
-
-set completion-bg               "#3B4252"
-set completion-fg               "#81A1C1"
-
-set completion-highlight-fg     "#8FBCBB"
-set completion-highlight-bg     "#81A1C1"
-
-set recolor-lightcolor          "#2E3440"
-set recolor-darkcolor           "#ECEFF4"
-
-set recolor                     "false"
-set recolor-keephue             "false"
+# Recolor book content's color
+set recolor-lightcolor          "#282828" # bg
+set recolor-darkcolor           "#ebdbb2" # fg
+set recolor                     "true"
+# set recolor-keephue             true      # keep original color
 
 # Startup options
 #

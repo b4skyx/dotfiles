@@ -85,8 +85,8 @@ super + {_,shift + }{Left, Down, Up, Right}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + shift + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+super + shift + {p,b}
+	bspc node -f @{parent,brother}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }n
@@ -157,8 +157,8 @@ XF86MonBrightnessUp
 	light -A 5
 
 ## Personal scripts
-super + l
-	~/.local/bin/dpass
+super + {l, shift} + l
+	{dpass, lock.sh}
 
 ## Music Controls
 super  + {less, greater, question}
@@ -168,7 +168,7 @@ super  + {less, greater, question}
 
 ## Tdrop, a drop down terminal to act like a scratchpad. Check scripts
 super + o; {w, p, r}
-	{firefox, tdrop_c -n 1 kitty -e pulsemixer, tdrop_c -n 2 kitty -e ranger}
+	{firefox, pavucontrol, tdrop_c -n 2 kitty -e ranger}
 
 ## Dropdown
 super + alt + m

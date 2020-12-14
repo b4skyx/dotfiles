@@ -17,7 +17,7 @@ fi
 
 # Prompt: git status, hostname for ssh sessions, vi mode indicator
 source $HOME/.zsh-plugins/git-prompt.zsh/git-prompt.zsh
-source $HOME/.zsh-plugins/git-prompt.zsh/examples/wprompt.zsh
+source $HOME/.zsh-plugins/git-prompt.zsh/examples/pure.zsh
 
 # Enable syntax highlighting. Must be loaded after all `zle -N` calls (see
 # https://github.com/zsh-users/zsh-syntax-highlighting#faq)
