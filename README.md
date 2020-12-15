@@ -11,10 +11,10 @@
 | Bar                                 | [polybar](https://github.com/jaagr/polybar)                                                    |
 | Program Launcher                    | [rofi](https://github.com/DaveDavenport/rofi)                                                  |
 | Wallpaper Setter                    | [feh](https://github.com/derf/feh)                                                             |
-| Web Browser                         | [Firefox](https://wiki.archlinux.org/index.php/Firefox)                                        |
+| Web Browser                         | [Firefox](https://www.mozilla.org/en-US/firefox/)                                              |
 | Icon theme                          | [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)                        |
 | Text editors/IDE's and Gtk/Qt theme | [Gruvbox](https://github.com/morhetz/gruvbox)                                                  |
-| Main Code Editor                    | [Nvim](https://neovim.io/)                                                                     |
+| Code Editor                         | [Nvim](https://neovim.io/)                                                                     |
 | Text editors/Terminal font          | [Victor Mono](https://rubjo.github.io/victor-mono/)                                            |
 | Shell                               | [zsh](https://www.zsh.org/)                                                                    |
 | Terminal Emulator                   | [Kitty](https://sw.kovidgoyal.net/kitty/)                                                      |
@@ -42,4 +42,4 @@
 ![Lock](./assets/lock.png)
 
 # [Wallpaper]
-![Wallpaper](./assets/wallpaper.png)
+![Wallpaper](./assets/wallpaper.jpg)
