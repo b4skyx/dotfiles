@@ -11,16 +11,15 @@
 | Bar                                 | [polybar](https://github.com/jaagr/polybar)                                                    |
 | Program Launcher                    | [rofi](https://github.com/DaveDavenport/rofi)                                                  |
 | Wallpaper Setter                    | [feh](https://github.com/derf/feh)                                                             |
-| Web Browser                         | [Vivaldi](https://wiki.archlinux.org/index.php/Vivaldi)                                        |
+| Web Browser                         | [Firefox](https://www.mozilla.org/en-US/firefox/)                                              |
 | Icon theme                          | [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)                        |
-| Text editors/IDE's and Gtk/Qt theme | [Nord](https://nordtheme.com/)                                                                 |
-| Text editors/IDE's font             | [Victor Mono](https://rubjo.github.io/victor-mono/)                                            |
-| System and terminal font            | [Victor Mono](https://rubjo.github.io/victor-mono/)                                            |
+| Text editors/IDE's and Gtk/Qt theme | [Gruvbox](https://github.com/morhetz/gruvbox)                                                  |
+| Code Editor                         | [Nvim](https://neovim.io/)                                                                     |
+| Text editors/Terminal font          | [Victor Mono](https://rubjo.github.io/victor-mono/)                                            |
 | Shell                               | [zsh](https://www.zsh.org/)                                                                    |
 | Terminal Emulator                   | [Kitty](https://sw.kovidgoyal.net/kitty/)                                                      |
 | Document Viewer                     | [Zathura](https://pwmt.org/projects/zathura/)                                                  |
-| Main Code Editor                    | [Nvim](https://neovim.io/)                                                                     |
-| Music Player                        | [cmus](https://cmus.github.io) [Spotify](https://www.spotify.com)                              |
+| Music Player                        | [ncmpcpp/mpd](https://github.com/ncmpcpp/ncmpcpp)                                              |
 
 # [Screenshots]
 
@@ -31,14 +30,16 @@
 ![Code Editor](./assets/nvim.png)
 
 ## Windows - Tiled
-![Windows-T](./assets/windows.png)
+![Windows-T](./assets/tiled.png)
 
 ## Windows - Floating
-![Windows-F](./assets/vivaldi-pulsemixer.png)
+![Windows-F](./assets/firefox-ncmpcpp.png)
 
-## Spotify
-Nord theme from spicetify
-![Spotify](./assets/spotify.png)
+## Discord CSS
+![Discord](./assets/discord.png)
+
+## Lockscreen
+![Lock](./assets/lock.png)
 
 # [Wallpaper]
-![Wallpaper](./assets/wallpaper.png)
+![Wallpaper](./assets/wallpaper.jpg)
