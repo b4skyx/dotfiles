@@ -19,13 +19,13 @@ i3lock -n -e                    \
     --timecolor=eceff4ff	\
     --timestr="%H:%M"		\
     --time-font=Canatell		\
-    --timesize=100		\
+    --timesize=80		\
     \
     --datecolor=d8dee9ff	\
     --datestr="%A, %d %B"	\
     --date-font=Canatell		\
     --datesize=20		\
-    --datepos="tx:625"		\
+    --datepos="tx:600"		\
     \
     --veriftext="Verifying..."	\
     --verif-font=Canatell		\

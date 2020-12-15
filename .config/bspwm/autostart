@@ -4,6 +4,6 @@
 firefox --class="init_firefox" &
 
 mpd_start &
-pidof bspswallow || bspswallow &
+pgrep bspswallow || bspswallow &
 
 xautolock -detectsleep -time 10 -locker "~/.local/scripts/lock.sh" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" &

@@ -8,13 +8,14 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-# Launch Bars
+# Get network Interface
 interface=$(ip route | grep '^default' | awk '{print $5}' | head -n1)
 
-if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar -c ~/.config/polybar/config.ini main &
-  done
-else
-    polybar -c ~/.config/polybar/config.ini main &
+## Load bar on primary monitor
+polybar -c ~/.config/polybar/config.ini main &
+
+# Load on second monitor if connected
+external_monitor=$(xrandr --query | grep 'HDMI-2')
+if [[ $external_monitor = HDMI-2\ connected* ]]; then
+	polybar -c ~/.config/polybar/config.ini secondary &
 fi

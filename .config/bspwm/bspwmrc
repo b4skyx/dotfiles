@@ -5,14 +5,16 @@ xsetroot -cursor_name left_ptr &
 sxhkd &
 picom --experimental-backends &
 dunst &
+
+# Replace caps lock with Esc
 setxkbmap -option caps:escape
 
 #### MONITORS ####
 bspc monitor -d 1 2 3 4 5 6 7 8 9
 
-my_laptop_external_monitor=$(xrandr --query | grep 'HDMI-2')
+external_monitor=$(xrandr --query | grep 'HDMI-2')
 
-if [[ $my_laptop_external_monitor = HDMI-2\ connected* ]]; then
+if [[ $external_monitor = HDMI-2\ connected* ]]; then
     xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output HDMI-2 --mode 1920x1080 --rotate normal --above eDP-1
 	bspc monitor HDMI-2 -d 1 2 3 4
 	bspc monitor eDP-1 -d 5 6 7 8 9

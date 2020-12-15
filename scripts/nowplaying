@@ -3,7 +3,9 @@ fname=`ncmpcpp --quiet --current-song "%f"`
 file=`find /data/Music -name "$fname"`
 
 ffmpeg -i "$file" -loglevel quiet  -an -vcodec copy /tmp/cover.jpg
+if [ -e /tmp/cover.jpg ]
+then
+	notify-send -i /tmp/cover.jpg "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
 
-notify-send -i /tmp/cover.jpg "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
-
-rm /tmp/cover.jpg
+	rm /tmp/cover.jpg
+fi
