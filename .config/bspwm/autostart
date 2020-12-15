@@ -1,9 +1,9 @@
 #!/bin/sh
-pgrep redshift || redshift &
-pgrep mpd || mpd &
-pgrep mpd-mpris || mpd-mpris &
-pgrep bspswallow || bspswallow &
-
 # Applications
 ~/.config/conky/start-conky.sh &
 firefox --class="init_firefox" &
+
+mpd_start &
+pgrep bspswallow || bspswallow &
+
+xautolock -detectsleep -time 10 -locker "~/.local/scripts/lock.sh" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" &

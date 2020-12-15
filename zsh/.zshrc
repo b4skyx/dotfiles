@@ -17,7 +17,7 @@ fi
 
 # Prompt: git status, hostname for ssh sessions, vi mode indicator
 source $HOME/.zsh-plugins/git-prompt.zsh/git-prompt.zsh
-source $HOME/.zsh-plugins/git-prompt.zsh/examples/wprompt.zsh
+source $HOME/.zsh-plugins/git-prompt.zsh/examples/pure.zsh
 
 # Enable syntax highlighting. Must be loaded after all `zle -N` calls (see
 # https://github.com/zsh-users/zsh-syntax-highlighting#faq)
@@ -55,10 +55,10 @@ alias ...='cd ../..'
 alias g='git'
 alias d='sudo docker'
 alias grep='grep --color=auto'
-alias la='ls -lah --color=auto'
-alias lh='ls -lh --color=auto'
-alias ls='ls --color=auto'
-alias l='ls --color=auto'
+alias la='exa -lah --color=auto'
+alias lh='exa -lh --color=auto'
+alias ls='exa --color=auto'
+alias l='exa --color=auto'
 alias :q='exit'
 alias ssh-public-key='cat ~/.ssh/id_rsa.pub'
 alias vim='nvim'

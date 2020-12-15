@@ -24,6 +24,9 @@ Print
 super + Escape
 	pkill -USR1 -x sxhkd
 
+super + shift + p
+	picom_toggle
+
 super + shift + Escape
 	~/.config/polybar/launch.sh
 
@@ -60,7 +63,7 @@ super + g
 # set the window state
 # super + {i,shift + i,shift+space}
 # 	bspc node -t {tiled,pseudo_tiled,floating}
-super + o
+super + u
 	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
 super + i
 	bspc node focused.tiled -t pseudo_tiled || bspc node -t tiled
@@ -85,8 +88,8 @@ super + {_,shift + }{Left, Down, Up, Right}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + shift + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+super + shift + {p,b}
+	bspc node -f @{parent,brother}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }n
@@ -157,15 +160,21 @@ XF86MonBrightnessUp
 	light -A 5
 
 ## Personal scripts
-super + l
-	~/.local/bin/dpass
+super + {l, shift} + l
+	{dpass, lock.sh}
+
+## Music Controls
+super  + {less, greater, question}
+	playerctl {previous, next, play-pause}
+
+## Open Applications
+
+## Tdrop, a drop down terminal to act like a scratchpad. Check scripts
+super + o; {w, p, r}
+	{firefox, pavucontrol, tdrop_c -n 2 kitty -e ranger}
 
 ## Dropdown
 super + alt + m
 	tdrop -am -w 1000 -h 650 -x 23% -y 17% kitty -e ncmpcpp
-super + alt + p
-	tdrop -am -w 1000 -h 650 -x 23% -y 17% -n 2 kitty -e pulsemixer
 super + shift + Return
 	tdrop -am -w 1000 -h 650 -x 23% -y 17% -n 1 kitty
-super + r
-	tdrop -am -w 1000 -h 650 -x 23% -y 17% -n 2 kitty -e ranger

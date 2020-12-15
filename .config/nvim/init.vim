@@ -11,6 +11,7 @@ endif
 " Vim-Plug Plugins
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'sainnhe/gruvbox-material'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ryanoasis/vim-devicons'
 
@@ -32,21 +33,12 @@ Plug 'vimwiki/vimwiki'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
 Plug 'ap/vim-css-color'
 
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 call plug#end()
-
-" vim-interface
-	set hidden
-	set ruler
-	set cursorline
-	set number relativenumber
-	set bg=dark
-	colorscheme nord
-	set cmdheight=1
-	set noshowmode
 
 " Behavior
 	syntax on
@@ -61,6 +53,31 @@ call plug#end()
 	set wrap linebreak nolist
 	set shortmess+=c
 	nnoremap c "_c
+
+" Gruvbox Settings
+	let g:gruvbox_material_background = 'soft'
+	let g:gruvbox_material_transparent_background = 0
+	let g:gruvbox_material_enable_bold = 1
+	let g:gruvbox_material_enable_italic = 1
+
+" Nord Settings
+	let g:nord_uniform_status_lines = 1
+	let g:nord_uniform_diff_background = 1
+	let g:nord_bold = 1
+	let g:nord_italic = 1
+	let g:nord_italic_comments = 1
+	let g:nord_underline = 1
+
+" vim-interface
+	set termguicolors
+	set hidden
+	set ruler
+	set cursorline
+	set number relativenumber
+	set bg=dark
+	colorscheme gruvbox-material
+	set cmdheight=1
+	set noshowmode
 
 	" Rust autofmt on save
 	let g:rustfmt_autosave = 1
@@ -145,7 +162,7 @@ call plug#end()
 " Lightline
 	let g:lightline = {}
 	let g:lightline.enable = {'statusline': 1,'tabline': 1}
-	let g:lightline.colorscheme = 'nord'
+	let g:lightline.colorscheme = 'gruvbox_material'
 	let g:lightline.active = { 'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ] }
 	let g:lightline.tabline= {'left': [ ['buffers'] ],'right': [ ['close'] ]}
 	let g:lightline.component_raw = {'buffers': 1}
@@ -185,3 +202,4 @@ call plug#end()
 	noremap <Leader><S-Tab> :Bw!<CR>
 	noremap <C-t> :tabnew split<CR>
 
+set list lcs=tab:\|\ ""

@@ -1,26 +1,28 @@
 #!/bin/bash
-#### AUTOSTART ####
 
-# init-daemons
+# INIT-DAEMONS
 xsetroot -cursor_name left_ptr &
 sxhkd &
 picom --experimental-backends &
 dunst &
-feh --bg-fill .config/wallpaper.jpg &
+
+# Replace caps lock with Esc
 setxkbmap -option caps:escape
-~/.config/polybar/launch.sh &
 
 #### MONITORS ####
 bspc monitor -d 1 2 3 4 5 6 7 8 9
 
-my_laptop_external_monitor=$(xrandr --query | grep 'HDMI-1')
-if [[ $my_laptop_external_monitor = HDMI-1\ connected* ]]; then
-    xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output HDMI-1 --mode 1920x1080 --rotate normal --above eDP-1
-	bspc monitor eDP-1 -d 1 2 3 4
-	bspc monitor HDMI-1 -d 5 6 7 8 9
+external_monitor=$(xrandr --query | grep 'HDMI-2')
+
+if [[ $external_monitor = HDMI-2\ connected* ]]; then
+    xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output HDMI-2 --mode 1920x1080 --rotate normal --above eDP-1
+	bspc monitor HDMI-2 -d 1 2 3 4
+	bspc monitor eDP-1 -d 5 6 7 8 9
 else
+	xrandr --output eDP-1 --auto
 	bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
 fi
+
 #### BSPWM configuration ####
 # bspc config border_radius                45
 bspc config window_gap 			  10
@@ -30,7 +32,7 @@ bspc config border_width 		  2
 bspc config bottom_padding                0
 bspc config left_padding                  0
 bspc config right_padding                 0
-bspc config single_monocle                true
+bspc config single_monocle                false
 bspc config click_to_focus                false
 bspc config split_ratio                   0.50
 bspc config borderless_monocle            true
@@ -48,9 +50,9 @@ bspc config pointer_action2 resize_side
 bspc config pointer_action3 resize_corner
 
 # Colors
-bspc config active_border_color \#8FBCBB
-bspc config focused_border_color \#4C566A
-bspc config normal_border_color \#2E3440
+bspc config active_border_color \#665c54
+bspc config focused_border_color \#665c54
+bspc config normal_border_color \#363836
 
 # Rules
 
@@ -65,4 +67,8 @@ bspc rule -a flameshot state='floating'
 bspc rule -a *:SPLASH state=floating
 bspc desktop -f 1
 
+# AUTOSTART
+feh --bg-fill .config/wallpaper.jpg &
+~/.config/polybar/launch.sh &
 ~/.config/bspwm/autostart &
+pidof bspswallow || bspswallow &

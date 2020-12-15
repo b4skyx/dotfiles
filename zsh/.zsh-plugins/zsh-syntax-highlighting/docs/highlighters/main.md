@@ -20,12 +20,14 @@ This highlighter defines the following styles:
 * `reserved-word` - shell reserved words (`if`, `for`)
 * `alias` - aliases
 * `suffix-alias` - suffix aliases (requires zsh 5.1.1 or newer)
+* `global-alias` - global aliases
 * `builtin` - shell builtin commands (`shift`, `pwd`, `zstyle`)
 * `function` - function names
 * `command` - command names
 * `precommand` - precommand modifiers (e.g., `noglob`, `builtin`)
 * `commandseparator` - command separation tokens (`;`, `&&`)
 * `hashed-command` - hashed commands
+* `autodirectory` - a directory name in command position when the `AUTO_CD` option is set
 * `path` - existing filenames
 * `path_pathseparator` - path separators in filenames (`/`); if unset, `path` is used (default)
 * `path_prefix` - prefixes of existing filenames
@@ -40,6 +42,7 @@ This highlighter defines the following styles:
 * `command-substitution-delimiter-quoted` - a quoted command substitution delimiters (`"$(` and `)"`)
 * `process-substitution` - process substitutions (`<(echo foo)`)
 * `process-substitution-delimiter` - process substitution delimiters (`<(` and `)`)
+* `arithmetic-expansion` - arithmetic expansion `$(( 42 ))`)
 * `single-hyphen-option` - single-hyphen options (`-o`)
 * `double-hyphen-option` - double-hyphen options (`--option`)
 * `back-quoted-argument` - backtick command substitution (`` `foo` ``)
@@ -58,7 +61,9 @@ This highlighter defines the following styles:
 * `assign` - parameter assignments (`x=foo` and `x=( )`)
 * `redirection` - redirection operators (`<`, `>`, etc)
 * `comment` - comments, when `setopt INTERACTIVE_COMMENTS` is in effect (`echo # foo`)
-* `named-fd` - named file descriptor (`echo foo {fd}>&2`)
+* `comment` - elided parameters in command position (`$x ls` when `$x` is unset or empty)
+* `named-fd` - named file descriptor (the `fd` in `echo foo {fd}>&2`)
+* `numeric-fd` - numeric file descriptor (the `2` in `echo foo {fd}>&2`)
 * `arg0` - a command word other than one of those enumerated above (other than a command, precommand, alias, function, or shell builtin command).
 * `default` - everything else
 
@@ -86,7 +91,6 @@ manual page][zshzle-Character-Highlighting].
 #### Parameters
 
 To avoid partial path lookups on a path, add the path to the `ZSH_HIGHLIGHT_DIRS_BLACKLIST` array.
-This interface is still experimental.
 
 ```zsh
 ZSH_HIGHLIGHT_DIRS_BLACKLIST+=(/mnt/slow_share)
