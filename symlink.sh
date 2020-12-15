@@ -3,6 +3,11 @@
 cwd="$PWD"
 
 
+# Wm/Env
+ln -sfn "$cwd"/.config/bspwm ~/.config/bspwm
+ln -sfn "$cwd"/.config/polybar ~/.config/polybar
+ln -sfn "$cwd"/.config/sxhkd ~/.config/sxhkd
+
 # Vim/Nvim
 ln -sfn "$cwd"/.config/nvim/init.vim ~/.config/nvim/init.vim
 ln -snf ~/.config/nvim/init.vim ~/.vimrc
@@ -14,8 +19,10 @@ ln -sfn "$cwd"/.config/kitty ~/.config/kitty
 ln -sfn "$cwd"/.fonts ~/.fonts
 ln -sfn "$cwd"/.config/conky ~/.config/conky
 ln -sfn "$cwd"/.config/mpv ~/.config/mpv
+ln -sfn "$cwd"/.config/mpd ~/.config/mpd
 ln -sfn "$cwd"/.config/ranger ~/.config/ranger
 ln -sfn "$cwd"/.config/gtk-3.0 ~/.config/gtk-3.0
+ln -sfn "$cwd"/.ncmpcpp ~/.ncmpcpp
 
 # Zsh
 ln -sfn "$cwd"/zsh/.zsh-plugins ~/.zsh-plugins
@@ -29,6 +36,3 @@ ln -sfn "$cwd"/.config/zathura ~/.config/zathura
 
 ln -sfn "$cwd"/redshift.conf ~/.config/redshift.conf
 
-ln -sfn "$cwd"/.config/bspwm ~/.config/bspwm
-ln -sfn "$cwd"/.config/polybar ~/.config/polybar
-ln -sfn "$cwd"/.config/sxhkd ~/.config/sxhkd
