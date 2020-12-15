@@ -67,6 +67,6 @@ bspc desktop -f 1
 
 # AUTOSTART
 feh --bg-fill .config/wallpaper.jpg &
-~/Polybar/launch.sh &
+~/.config/polybar/launch.sh &
 ~/.config/bspwm/autostart &
 pidof bspswallow || bspswallow &

@@ -25,7 +25,7 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 super + shift + Escape
-	~/Polybar/launch.sh
+	~/.config/polybar/launch.sh
 
 # quit/restart bspwm
 super + alt + {q,r}

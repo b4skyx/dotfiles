@@ -82,19 +82,19 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: Hack
+    family: VictorMono Nerd Font Mono
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
   # Bold font face
   bold:
-    family: Hack
+    family: VictorMono Nerd Font Mono
     # The `style` can be specified to pick a specific face.
     #style: Bold
 
   # Italic font face
   italic:
-    family: Hack
+    family: VictorMono Nerd Font Mono
     # The `style` can be specified to pick a specific face.
     #style: Italic
 

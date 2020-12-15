@@ -11,31 +11,31 @@ i3lock -n -e                    \
     --insidewrongcolor=00000000 \
     --insidecolor=00000000	\
     \
-    --ringcolor=5e81acff        \
-    --ringvercolor=a3be8cff     \
+    --ringcolor=a89984ff        \
+    --ringvercolor=b16286ff     \
     --ringwrongcolor=bf616aff   \
     \
     --clock			\
     --timecolor=eceff4ff	\
     --timestr="%H:%M"		\
-    --time-font=Hack		\
+    --time-font=Canatell		\
     --timesize=100		\
     \
     --datecolor=d8dee9ff	\
     --datestr="%A, %d %B"	\
-    --date-font=Hack		\
+    --date-font=Canatell		\
     --datesize=20		\
     --datepos="tx:625"		\
     \
     --veriftext="Verifying..."	\
-    --verif-font=Hack		\
+    --verif-font=Canatell		\
     --verifcolor=d8dee9ff	\
     --verifsize=45		\
     \
     --wrongtext="Incorrect"	\
-    --wrong-font=Hack		\
+    --wrong-font=Canatell		\
     --wrongcolor=d8dee9ff	\
     --wrongsize=45		\
     \
     --indicator			\
-    --color=2e3440
+    --color=32302f

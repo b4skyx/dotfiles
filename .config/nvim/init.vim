@@ -55,7 +55,7 @@ call plug#end()
 	nnoremap c "_c
 
 " Gruvbox Settings
-	let g:gruvbox_material_background = 'medium'
+	let g:gruvbox_material_background = 'soft'
 	let g:gruvbox_material_transparent_background = 0
 	let g:gruvbox_material_enable_bold = 1
 	let g:gruvbox_material_enable_italic = 1

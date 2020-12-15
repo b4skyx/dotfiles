@@ -17,5 +17,5 @@ configuration {
 	color-normal: "argb:00000000, #ebdbb2, argb:00000000, argb:00000000, #d79921";
 	color-urgent: "argb:2ccc241d, #ebdbb2, argb:00000000, #a54242, #282828";
 	color-active: "argb:2ccc241d, #ebdbb2, argb:00000000, #4491ed, #282828";
-	color-window: "argb:FA282828, #ebdbb2, argb:00000000";
+	color-window: "argb:FA32302f, #ebdbb2, argb:00000000";
 }
