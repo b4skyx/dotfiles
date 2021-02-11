@@ -27,10 +27,10 @@
 ![Home](https://user-images.githubusercontent.com/55960554/107644031-e9508b80-6c9c-11eb-8caf-4e4d14d787cf.png)
 
 ## Code Editor
-![Code Editor](https://user-images.githubusercontent.com/55960554/107643849-ae4e5800-6c9c-11eb-8beb-41e0423fb470.png)
+![code-editor](https://user-images.githubusercontent.com/55960554/107646720-4994fc80-6ca0-11eb-9b7c-c73458e4d4b9.png)
 
 ## Windows - Tiled
-![Windows-T](https://user-images.githubusercontent.com/55960554/107646720-4994fc80-6ca0-11eb-9b7c-c73458e4d4b9.png)
+![Windows-T](https://user-images.githubusercontent.com/55960554/107646143-a47a2400-6c9f-11eb-9c00-ccbd0f9a33f6.png)
 
 ## Windows - Floating
 ![Windows-F](https://user-images.githubusercontent.com/55960554/107644698-c4a8e380-6c9d-11eb-9773-795e51e9360a.png)
