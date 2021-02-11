@@ -108,23 +108,6 @@ regular_expressions = "extended"
 
 #progressbar_elapsed_color = "white"
 
-##### colors definitions #####
-colors_enabled = yes
-empty_tag_color = black
-header_window_color = white
-volume_color = black
-state_line_color = red
-state_flags_color = black
-main_window_color = cyan
-color1 = red
-color2 = magenta
-progressbar_color = cyan
-progressbar_elapsed_color = green
-statusbar_color = green
-alternative_ui_separator_color = black
-window_border_color = black
-active_window_border = green
-
 # enable_window_title = "no"
 follow_now_playing_lyrics = "yes"
 ignore_leading_the = "yes"
