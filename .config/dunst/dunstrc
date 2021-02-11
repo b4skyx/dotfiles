@@ -9,7 +9,7 @@
     separator_height = 0
     padding = 20
     horizontal_padding = 20
-    frame_width = 3
+    frame_width = 2
     frame_color = "#474f54"
     separator_color = frame
     font = Sarasa Mono K
