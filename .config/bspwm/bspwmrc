@@ -24,7 +24,7 @@ _bc() {
 _bc window_gap 			  						8
 _bc top_padding 									26
 _bc top_monocle_padding 					0
-_bc border_width 								  3
+_bc border_width 								  2
 _bc bottom_padding                0
 _bc left_padding                  0
 _bc right_padding 								0
