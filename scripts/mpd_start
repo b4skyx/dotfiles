@@ -1,0 +1,8 @@
+# !/bin/bash
+
+pidof mpd || mpd &
+until pids=$(pidof mpd)
+do
+    sleep 1
+done
+pgrep mpd-mpris || mpd-mpris &

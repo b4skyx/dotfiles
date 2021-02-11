@@ -1,0 +1,16 @@
+{
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "coc.preferences.formatOnSaveFiletypes": ["python", "markdown", "javascript", "html", "json"],
+  "rust-client.disableRustup": true,
+  "python.jediEnabled": false,
+  "snippets.ultisnips.directories" :
+  [
+	  "UltiSnips",
+	  "~/.config/nvim/utils/snips"
+  ],
+  "rpc.detailsViewing": "Wsp: {workspace}",
+  "rpc.detailsInExplorer": "Workspace: {workspace}",
+  "rpc.lowerDetailsEditing": "{filename}",
+  "rpc.showProblems": false
+}

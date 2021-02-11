@@ -1,0 +1,12 @@
+configuration {
+	modi: "window,run,drun";
+	lines: 10;
+	columns: 1;
+	font: "Sarasa Gothic K";
+	bw: 0;
+	show-icons: true;
+	terminal: "kitty";
+	matching: "fuzzy";
+	line-margin: 18;
+}
+@import "~/.config/rofi/gruv.rasi"

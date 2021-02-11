@@ -1,0 +1,14 @@
+configuration {
+    font                : "Sarasa UI K 11";
+    show-icons          : true;
+    icon-theme          : "Papirus";
+    display-drun        : "Applications";
+    drun-display-format : "{name}";
+    disable-history     : false;
+    fullscreen          : false;
+    hide-scrollbar      : true;
+    sidebar-mode        : false;
+}
+
+@import "colorscheme.rasi"
+@import "fluent.rasi"

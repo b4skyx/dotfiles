@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+if [[ -z "$1" ]]; then
+  printf "Search Video: ";
+  query=$( echo | dmenu -p "Search YT Video:" )
+else
+	query="$1"
+fi
+
+query="${query// /+}"
+echo "$query"
+
+# YT_API_KEY location
+YT_API_KEY="$( cat "${HOME}"/YT_API_KEY )"
+urlstring="https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&maxResults=20&key=${YT_API_KEY}"
+
+mpv "https://$( curl -s "${urlstring}" \
+	| jq -r '.items[] | "\(.snippet.channelTitle) => \(.snippet.title) => youtu.be/\(.id.videoId)"' \
+	| dmenu -i -p 'Select Video -' \
+	| awk '{print $NF}' \
+)"

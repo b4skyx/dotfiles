@@ -1,0 +1,64 @@
+[global]
+    monitor = 0
+    follow = keyboard
+    geometry = "500x10-20+40"
+    indicate_hidden = yes
+    shrink = true
+    transparency = 10
+    notification_height = 0
+    separator_height = 0
+    padding = 20
+    horizontal_padding = 20
+    frame_width = 3
+    frame_color = "#474f54"
+    separator_color = frame
+    font = Sarasa Mono K
+    height = 4
+    markup = full
+    format = "<span foreground='#b3cfa7'><b>%s</b>%p</span>\n%b"
+    alignment = left
+    show_age_threshold = 60
+    word_wrap = yes
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = false
+    hide_duplicate_count = true
+    show_indicators = yes
+    icon_position = left
+    max_icon_size = 64
+    icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/:/usr/share/icons/Papirus/16x16/apps/
+    sticky_history = yes
+    history_length = 20
+    always_run_script = true
+    startup_notification = false
+    browser = /usr/bin/firefox -new-tab
+    verbosity = mesg
+    corner_radius = 0
+    force_xinerama = false
+    mouse_left_click = close_current
+    mouse_middle_click = do_action
+    mouse_right_click = close_all
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
+
+[urgency_low]
+timeout = 4
+background = "#2a2f33"
+foreground = "#b3cfa7"
+frame_color = "#474f54"
+
+[urgency_normal]
+timeout = 8
+background = "#2a2f33"
+foreground = "#b3cfa7"
+frame_color = "#474f54"
+
+[urgency_critical]
+timeout = 0
+background = "#2a2f33"
+foreground = "#b3cfa7"
+frame_color = "#b8bb26"

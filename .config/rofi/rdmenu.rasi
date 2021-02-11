@@ -1,0 +1,28 @@
+#window {
+    anchor:     north;
+    location:   north;
+    width:      100%;
+    border:     0px;
+    padding:    0px;
+    children:   [ horibox ];
+}
+
+#horibox {
+    orientation: horizontal;
+    children:   [ prompt, entry, listview ];
+}
+
+#listview {
+    layout:     horizontal;
+    spacing:    8px;
+    lines:      100;
+}
+
+#entry {
+    expand:     false;
+    width:      15em;
+}
+
+#element {
+    padding:    0px 0px;
+}

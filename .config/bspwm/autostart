@@ -1,0 +1,13 @@
+#!/bin/sh
+# Applications
+pgrep conky || ~/.config/conky/start-conky.sh &
+pidof redshift || redshift &
+xrdb ~/.Xresources
+brave &
+
+mpd-mpris &
+pgrep bspswallow || ~/.local/scripts/bspswallow &
+
+xautolock -detectsleep -time 10 -locker "~/.local/scripts/lock.sh" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" &
+
+mate-power-manager &

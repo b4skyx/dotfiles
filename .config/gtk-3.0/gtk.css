@@ -1,0 +1,11 @@
+/* remove window title from Client-Side Decorations */
+.solid-csd headerbar .title {
+    font-size: 0;
+}
+
+/* hide extra window decorations/double border */
+window decoration {
+    margin: 0;
+    border: none;
+    padding: 0;
+}

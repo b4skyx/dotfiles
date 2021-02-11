@@ -1,0 +1,25 @@
+#!/bin/bash
+# Lets BSPWM send the marked {or just the focused} node to a receptacle
+
+
+_bspc_query() {
+	bspc query -N -n "$@"
+}
+
+_marked_else_focused() {
+	if [ -n "$(_bspc_query 'any.marked')" ]; then
+		echo 'any.marked'
+	else
+		echo 'focused'
+	fi
+}
+
+receptacle="$(_bspc_query 'any.leaf.!window')"
+
+# Use a receptacle if available, else use a preselection.  None is
+# limited to the focused desktop.
+if [ -n "$receptacle" ]; then
+	bspc node "$(_marked_else_focused)" -n "$receptacle" --follow
+else
+	bspc node "$(_marked_else_focused)" -n 'newest.!automatic' --follow
+fi
