@@ -3,7 +3,6 @@
     highlight: bold italic;
     scrollbar: true;
 
-    /* Gruvbox dark colors */
     bg0-soft:     #2a2f33;
     bg1:          #31363b;
     bg3:          #474f54;
@@ -44,5 +43,4 @@
     selected-urgent-background:  @red-light;
     selected-urgent-foreground:  @urgent-foreground;
 }
-
 @import "gruvbox-common.rasi"

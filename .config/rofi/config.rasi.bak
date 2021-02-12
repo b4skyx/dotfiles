@@ -1,12 +1,14 @@
 configuration {
-	modi: "window,run,drun";
-	lines: 10;
-	columns: 1;
-	font: "Sarasa Gothic K";
-	bw: 0;
-	show-icons: true;
-	terminal: "kitty";
-	matching: "fuzzy";
-	line-margin: 18;
+    font                : "Sarasa UI K 11";
+    show-icons          : true;
+    icon-theme          : "Papirus";
+    display-drun        : "Applications";
+    drun-display-format : "{name}";
+    disable-history     : false;
+    fullscreen          : false;
+    hide-scrollbar      : true;
+    sidebar-mode        : false;
 }
-@import "~/.config/rofi/gruv.rasi"
+
+@import "colorscheme.rasi"
+@import "fluent.rasi"
