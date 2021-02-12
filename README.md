@@ -36,7 +36,9 @@
 ![Windows-F](https://user-images.githubusercontent.com/55960554/107644698-c4a8e380-6c9d-11eb-9773-795e51e9360a.png)
 
 ## Discord CSS
-![Discord](https://user-images.githubusercontent.com/55960554/107644887-089be880-6c9e-11eb-8f08-1e1ec29c14ce.png)
+![Discord](https://user-images.githubusercontent.com/55960554/107776263-5892b200-6d67-11eb-8474-b1249bb28604.png)
+## Rofi
+![Rofi](https://cdn.discordapp.com/attachments/635625925748457482/809780738391015444/unknown.png)
 
 ## Lockscreen
 ![Lock](https://user-images.githubusercontent.com/55960554/107645132-56185580-6c9e-11eb-829a-b52e487371e3.png)
