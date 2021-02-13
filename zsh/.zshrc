@@ -65,6 +65,7 @@ alias ssh-public-key='cat ~/.ssh/id_rsa.pub'
 alias vim='nvim'
 alias whoneeds='pacman -Qi'
 alias notes='nvim /data/workspace/notes/index.md'
+alias rmorphans='sudo pacman -Rns $(pacman -Qdtq)'
 #}}}
 
 source /home/abi/.config/broot/launcher/bash/br

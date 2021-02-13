@@ -4,7 +4,7 @@ ZSH_GIT_PROMPT_SHOW_UPSTREAM="no"
 ZSH_THEME_GIT_PROMPT_PREFIX=" "
 ZSH_THEME_GIT_PROMPT_SUFFIX=" "
 ZSH_THEME_GIT_PROMPT_SEPARATOR=""
-ZSH_THEME_GIT_PROMPT_BRANCH="⎇ %{$fg_bold[cyan]%}"
+ZSH_THEME_GIT_PROMPT_BRANCH="⎇  %{$fg_bold[cyan]%}"
 ZSH_THEME_GIT_PROMPT_UPSTREAM_SYMBOL="%{$fg_bold[yellow]%}⟳ "
 ZSH_THEME_GIT_PROMPT_UPSTREAM_PREFIX="%{$fg[red]%}(%{$fg[yellow]%}"
 ZSH_THEME_GIT_PROMPT_UPSTREAM_SUFFIX="%{$fg[red]%})"
@@ -19,12 +19,11 @@ ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[blue]%}⚑"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
 
 # In the second line of the prompt $psvar[12] is read
-# PROMPT=$'%F{green}%~%f %F{242}$(gitprompt)%f
+# PROMPT=$'%(4~|-/%F{green}%3~%f%F{242}|%F{green}%~%f%F{242})$(gitprompt)%f
 # %(12V.%F{242}%12v%f .)%(?.%F{yellow}.%F{red})➜%f '
 
-PROMPT=$'%(4~|-/%F{green}%3~%f%F{242}|%F{green}%~%f%F{242})$(gitprompt)%f
-%(12V.%F{242}%12v%f .)%(?.%F{yellow}.%F{red})➜%f '
-
+PROMPT=$'%F{blue}%(4~|../%3~|%~)%f%F{242}$(gitprompt)%f
+%(12V.%F{242}%12v%f .)%(?.%F{blue}.%F{red})シ%f '
 
 
 setup() {
