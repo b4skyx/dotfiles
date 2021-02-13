@@ -16,7 +16,7 @@ ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}✧"
 ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg[red]%}+"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="…"
 ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[blue]%}⚑"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
+ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg_bold[green]%}✔"
 
 # In the second line of the prompt $psvar[12] is read
 # PROMPT=$'%(4~|-/%F{green}%3~%f%F{242}|%F{green}%~%f%F{242})$(gitprompt)%f
