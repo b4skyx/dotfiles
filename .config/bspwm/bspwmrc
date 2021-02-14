@@ -77,6 +77,6 @@ dunst &
 setxkbmap -option caps:backspace
 
 # AUTOSTART
-hsetroot -cover ~/.config/wallpaper.jpg
+hsetroot -cover ~/.config/wallpaper.jpg &
 ~/.config/polybar/launch.sh &
 ~/.config/bspwm/autostart &
