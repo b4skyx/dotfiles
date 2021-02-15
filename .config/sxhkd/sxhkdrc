@@ -142,11 +142,11 @@ super + alt + {Left, Down, Up, Right}
 
 #Volume Control
 XF86AudioLowerVolume
-	amixer set Master 5%-
+	ponymix unmute && ponymix decrease 5
 XF86AudioRaiseVolume
-	amixer set Master 5%+
+	ponymix unmute && ponymix increase 5
 XF86AudioMute
-  amixer set Master toggle
+	ponymix toggle
 
 #Brightness control
 XF86MonBrightnessDown
