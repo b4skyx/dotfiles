@@ -1,10 +1,17 @@
-/* @import url("https://discordstyles.github.io/AdjustableServerWidth/base.css"); */
+@import url("https://discordstyles.github.io/AdjustableServerWidth/base.css");
+@import url("https://goldenlys.github.io/BetterDiscord-Elysia/HoverMemberList.css");
 
-/* :root { */
-/*   --server-icon-size: 40px; /1* Size of the server icons | DEFAULT: 35px *1/ */
-/*   --server-icon-spacing: 8px; /1* Spacing between server icons. Negative values are allowed | DEFAULT: 8px *1/ */
-/*   --server-container-padding: 10px; /1* Spacing to the left and right sides of server icons | DEFAULT: 10px *1/ */
-/* } */
+.membersWrap-2h-GB4 {
+    -webkit-transform: translateX(205px);
+    transform: translateX(205px);
+    position: absolute;
+}
+
+:root {
+  --server-icon-size: 45px; /* Size of the server icons | DEFAULT: 35px */
+  --server-icon-spacing: 10px; /* Spacing between server icons. Negative values are allowed | DEFAULT: 8px */
+  --server-container-padding: 15px; /* Spacing to the left and right sides of server icons | DEFAULT: 10px */
+}
 
 /* Font */
 
@@ -24,14 +31,14 @@
 
 .theme-dark {
     --background-primary: #2a2f33;
-    --background-secondary: #212529;
+    --background-secondary: #31363b;
     --background-tertiary: #312e35;
     --background-accent: #504945;
     --text-normal: #bfddb2;
     --text-spotify: #B3CFA8;
     --text-muted: #bdae93;
     --text-link: #458588;
-    --background-floating: #212529;
+    --background-floating: #31363b;
     --header-primary: #B3CFA7;
     --header-secondary: #bdae93;
     --header-spotify: #b8bb26;
