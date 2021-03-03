@@ -12,3 +12,17 @@
 
 	" Rust autofmt on save
 	let g:rustfmt_autosave = 1
+
+" Use <c-space> to trigger completion.
+  inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use K to show documentation in preview window
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction

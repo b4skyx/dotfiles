@@ -1,4 +1,5 @@
 configuration {
+    modi                : "window,ssh,drun";
     font                : "Sarasa UI K 11";
     show-icons          : true;
     icon-theme          : "Papirus";

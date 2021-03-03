@@ -53,7 +53,6 @@ alias calc='noglob cc'
 #{{{ Aliases
 alias ...='cd ../..'
 alias g='git'
-alias d='sudo docker'
 alias p='prime-run'
 alias grep='grep --color=auto'
 alias la='exa -lah --color=auto'

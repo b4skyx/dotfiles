@@ -1,16 +1,16 @@
 [global]
     monitor = 0
     follow = keyboard
-    geometry = "500x10-20+40"
+    geometry = "500x10-8+34"
     indicate_hidden = yes
     shrink = true
-    transparency = 10
+    transparency = 6
     notification_height = 0
     separator_height = 0
     padding = 20
     horizontal_padding = 20
     frame_width = 2
-    frame_color = "#474f54"
+    frame_color = "#767c82"
     separator_color = frame
     font = Sarasa Mono K
     height = 4
@@ -49,13 +49,13 @@
 timeout = 4
 background = "#2a2f33"
 foreground = "#b3cfa7"
-frame_color = "#474f54"
+frame_color = "#767c82"
 
 [urgency_normal]
 timeout = 8
 background = "#2a2f33"
 foreground = "#b3cfa7"
-frame_color = "#474f54"
+frame_color = "#767c82"
 
 [urgency_critical]
 timeout = 0
