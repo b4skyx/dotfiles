@@ -67,4 +67,5 @@ alias notes='nvim /data/workspace/notes/index.md'
 alias rmorphans='sudo pacman -Rns $(pacman -Qdtq)'
 #}}}
 
-source /home/abi/.config/broot/launcher/bash/br
+source $HOME/.config/broot/launcher/bash/br
+export PATH=$HOME/.config/nvcode/utils/bin:$PATH

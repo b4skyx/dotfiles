@@ -1,0 +1,105 @@
+configuration {
+    display-drun: "";
+    display-run: "";
+    display-window: "缾";
+    show-icons: true;
+    icon-theme: "Papirus";
+    fixed-num-lines: false;
+    location: 2;
+}
+
+* {
+  // Foreground
+  fg: #ffffff;
+  fg-dark: argb:77ffffff;
+  fg-highlight: #ffffff;
+
+  // Background
+  bg: argb:3c3c3c3c;
+  bg-dark: argb:44101010;
+  bg-highlight: argb:bb3379f2;
+  bg-border: argb:88666666;
+
+  // Border
+  bd-outer: argb:ff000000;
+  bd-inner: argb:3cbbbbbb;
+  bd-highlight: argb:dd3379f2;
+
+  transparent: argb:00000000;
+
+  text-color: @fg;
+  background-color: @bg;
+
+  y-offset: 25%;
+  width: 32em;
+  spacing: 0;
+
+  font: "SF Pro Display Medium 11";
+  border-radius: 10;
+}
+
+window {
+  transparency: "real";
+  border-color: @bd-outer;
+  border: 1;
+}
+
+inputbar {
+  background-color: @transparent;
+  border-color: @bg-border;
+  border: 0 0 1 0;
+  border-radius: 0;
+}
+
+prompt {
+  text-color: @fg-dark;
+  padding: 0.4em 0.7em 0.4em 0.7em;
+  border: 0 0 0 0;
+  font: "SF Pro Display 20";
+  border-radius: 0;
+}
+
+entry {
+  placeholder-color: @fg-dark;
+  placeholder: "Search";
+  padding: 0.4em 0.5em 0.4em 0;
+  font: "SF Pro Display 20";
+  border-radius: 0;
+}
+
+listview {
+  background-color: @bg;
+  cycle: false;
+  dynamic: true;
+  padding: 0.3em 0 0 0;
+  lines: 7;
+  border-radius: 0;
+}
+
+element {
+  background-color: @transparent;
+  margin: 0 0.3em 0.3em 0.3em;
+  padding: 0.05em 0 0.05em 0;
+  border-radius: 7;
+}
+
+element-icon {
+  size: 0.75em;
+  padding: 0 0.4em 0 0.6em;
+}
+
+element-text {
+  padding: 0.2em 0.2em 0.2em 0;
+}
+
+mainbox {
+  border-color: @bd-inner;
+  border: 1;
+}
+
+element selected {
+  background-color: @bg-highlight;
+  text-color: @fg-highlight;
+  border-color: @bd-highlight;
+  border: 1;
+}

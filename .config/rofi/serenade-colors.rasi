@@ -13,6 +13,7 @@
     yellow-dark:  #d79921;
     yellow-light: #fabd2f;
     gray:         #a89984;
+    transparent: argb:00000000;
 
     /* Theme colors */
     background:                  @bg0-soft;
@@ -42,5 +43,7 @@
     alternate-urgent-foreground: @urgent-foreground;
     selected-urgent-background:  @red-light;
     selected-urgent-foreground:  @urgent-foreground;
+
+    text-color: @fg1;
 }
 @import "gruvbox-common.rasi"

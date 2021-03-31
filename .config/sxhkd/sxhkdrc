@@ -170,7 +170,7 @@ super + apostrophe
 
 ## Tdrop, a drop down terminal to act like a scratchpad. Check scripts
 super + o; {w, p, r}
-	{brave, pavucontrol, tdrop_c -n 3 -p 'bspc rule -a St -o state=floating' st -e lf}
+	{firefox, pavucontrol, tdrop_c -n 3 -p 'bspc rule -a St -o state=floating' st -e lf}
 
 ## Dropdown
 super + alt + m

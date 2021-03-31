@@ -62,9 +62,12 @@ function dedicated_gpu()
         return string.find(r.stdout, "Chipset Model: Radeon") ~= nil or string.find(r.stdout, "Chipset Model: NVIDIA GeForce") ~= nil
     -- Untested
     elseif is_linux then
-        local r = exec({"lshw", "-C", 'display'})
+        -- local r = exec({"lshw", "-C", 'display'})
+        local r = exec({"nvidia-smi"})
         r.stdout = string.lower(r.stdout)
-        return string.find(r.stdout, "amd") ~= nil or string.find(r.stdout, "nvidia") ~= nil
+        -- return string.find(r.stdout, "amd") ~= nil or string.find(r.stdout, "nvidia") ~= nil
+
+        return string.find(r.stdout, "mpv") ~= nil
     elseif is_windows then
         msg.warn("dedicated_gpu() not implemented on windows. PRs welcome")
     end

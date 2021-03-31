@@ -1,0 +1,10 @@
+configuration {
+    display-drun: "";
+    display-run: "";
+    display-window: "缾";
+    show-icons: true;
+    icon-theme: "Papirus";
+    fixed-num-lines: true;
+}
+@import "serenade-colors"
+@import "macos"

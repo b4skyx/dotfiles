@@ -3,7 +3,8 @@
 pgrep conky || ~/.config/conky/start-conky.sh &
 pidof redshift || redshift &
 xrdb ~/.Xresources
-brave &
+firefox &
+mailsync &
 
 mpd-mpris &
 pgrep bspswallow || ~/.local/scripts/bspswallow &

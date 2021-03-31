@@ -6,12 +6,12 @@
 " let g:lightline.tabline_subseparator = { 'left': "\ue0bb", 'right': "\ue0bb" }
 	let g:lightline.enable = {'statusline': 1,'tabline': 1}
 	" let g:lightline.colorscheme = 'gruvbox_material'
-	let g:lightline.active = { 'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ],	'right': [ [ 'lineinfo' ], ['percent'], ['filetype']] }
+	let g:lightline.active = { 'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified'], ['method'] ],	'right': [ [ 'lineinfo' ], ['percent'], ['filetype'], ['cocstatus', 'currentfunction']] }
 	let g:lightline.tabline= {'left': [ ['buffers'] ],'right': [ ['close'] ]}
 	let g:lightline.component_raw = {'buffers': 1}
 	let g:lightline.component_expand= {'buffers': 'lightline#bufferline#buffers'}
 	let g:lightline.component_type = {'buffers': 'tabsel'}
-	let g:lightline.component_function = { 'filetype': 'MyFiletype','fileformat': 'MyFileformat',}
+	let g:lightline.component_function = { 'filetype': 'MyFiletype','fileformat': 'MyFileformat', 'cocstatus': 'coc#status', 'currentfunction': 'CocCurrentFunction', 'method': 'NearestMethodOrFunction'}
 	let g:lightline#bufferline#show_number = 2
 	let g:lightline#bufferline#unnamed = "untitled"
 	let g:lightline#bufferline#enable_devicons = 1
@@ -19,12 +19,20 @@
 	let g:lightline#bufferline#clickable = 1
 
 	function! MyFiletype()
-	 return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+	 return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : '⤫') : ''
 	endfunction
 
 	function! MyFileformat()
 	 return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 	endfunction
+
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
 
 " Buffer Mappings
 	nmap <Leader>1 <Plug>lightline#bufferline#go(1)
@@ -37,4 +45,3 @@
 	nmap <Leader>8 <Plug>lightline#bufferline#go(8)
 	nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 	nmap <Leader>0 <Plug>lightline#bufferline#go(10)
-

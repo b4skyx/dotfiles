@@ -17,7 +17,7 @@ done
 # foreground, background, and cursor.
 sequences+="\\033]10;$(xrdb_query foreground)\\007"
 sequences+="\\033]11;$(xrdb_query background)\\007"
-sequences+="\\033]17;$(xrdb_query foreground)\\007"
+sequences+="\\033]17;$(xrdb_query cursorColor)\\007"
 
 for term in /dev/pts/[0-9]*; do
   printf "%b" "${sequences}" > "${term}" &

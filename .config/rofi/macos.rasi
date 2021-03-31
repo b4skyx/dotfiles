@@ -1,0 +1,70 @@
+window {
+  width: 35em;
+  spacing: 0;
+  transparency: "real";
+  border-color: @border;
+  border: 4;
+  border-radius: 0;
+}
+
+inputbar {
+  background-color: @transparent;
+  border-color: @border-color;
+  children: [prompt, entry];
+  border: 0 0 1 0;
+  border-radius: 0;
+}
+
+prompt {
+  text-color: @foreground;
+  padding: 0.3em 0.5em 0.5em 0.5em;
+  border: 0 0 0 0;
+  font: "Sarasa UI K 12";
+  border-radius: 0;
+}
+
+entry {
+  placeholder-color: @foreground;
+  placeholder: "Search";
+  padding: 0.3em 0 0.5em 0;
+  font: "Sarasa UI K 12";
+  border-radius: 0;
+}
+
+listview {
+  background-color: @background;
+  cycle: false;
+  dynamic: true;
+  padding: 0.3em 0 0 0;
+  lines: 8;
+  border-radius: 0;
+}
+
+element {
+  background-color: @transparent;
+  margin: 0em 0.3em 0em 0.3em;
+  padding: 0.15em 0 0.15em 0;
+  border-radius: 0;
+}
+
+element-icon {
+  size: 0.9em;
+  padding: 0 0.4em 0 0.6em;
+}
+
+element-text {
+  padding: 0.2em 0.2em 0.2em 0;
+  font: "Sarasa UI K 12";
+}
+
+mainbox {
+  border-color: @border;
+  border: 0;
+}
+
+element selected {
+  background-color: @bg-highlight;
+  text-color: @fg-highlight;
+  border-color: @bd-highlight;
+  border: 1;
+}

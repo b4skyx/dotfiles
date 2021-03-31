@@ -8,7 +8,7 @@
 	set foldmethod=indent
 	set conceallevel=2
 	set autoindent
-	set wrap linebreak nolist
+	set wrap linebreak
 	set shortmess+=c
 	nnoremap c "_c
 	set ignorecase
@@ -23,6 +23,7 @@
 	set t_Co=256
 	if has('termguicolors')
 		set termguicolors
+		lua require'colorizer'.setup()
 	endif
 	set hidden
 	set ruler
@@ -36,3 +37,6 @@
 " Command Completion
 	set wildmenu
 	set wildmode=longest:full,full
+
+" Clipboard
+	set clipboard+=unnamedplus

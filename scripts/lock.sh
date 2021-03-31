@@ -14,6 +14,7 @@ i3lock -n -e                    \
     --ringcolor=a89984ff        \
     --ringvercolor=b16286ff     \
     --ringwrongcolor=bf616aff   \
+    --ring-width=10              \
     \
     --clock			\
     --timecolor=eceff4ff	\

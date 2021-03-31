@@ -10,5 +10,5 @@ configuration {
     sidebar-mode        : false;
 }
 
-@import "colorscheme.rasi"
+@import "serenade-colors.rasi"
 @import "fluent.rasi"
