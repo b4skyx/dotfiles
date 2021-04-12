@@ -1,0 +1,9 @@
+#!/bin/sh
+brave \
+    --no-sandbox \
+    --disable-background-networking \
+    --disable-background-timer-throttling \
+    --disable-backing-store-limit \
+    --disable-breakpad \
+    --app=https://discord.com/app \
+    $@ >/dev/null 2>&1 &

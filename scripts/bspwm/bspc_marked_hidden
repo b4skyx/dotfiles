@@ -1,0 +1,6 @@
+#!/bin/bash
+NODES=$(bspc query -N -n .marked)
+
+for node in $NODES; do
+    bspc node $node -g hidden --to-desktop focused --focus
+done

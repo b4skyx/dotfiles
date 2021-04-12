@@ -1,0 +1,48 @@
+#!/usr/bin/python3
+
+import os
+import requests
+import json
+url = 'http://127.0.0.1:6800/jsonrpc'
+active = json.dumps({
+    'id': '',
+    'jsonrpc': '2.0',
+    'method': 'aria2.tellActive'
+})
+
+stopped = json.dumps({
+    'id': '',
+    'jsonrpc': '2.0',
+    'method': 'aria2.tellStopped',
+    'params': [-1, 4]
+})
+active_resp = requests.post(url=url, data=active)
+stopped_resp = requests.post(url=url, data=stopped)
+
+active_resp = active_resp.json()
+stopped_resp = stopped_resp.json()
+
+active_downloads = active_resp["result"]
+stopped_downloads = stopped_resp["result"]
+
+def get_download_progess(file):
+    completedLength= int(file["completedLength"])
+    totalLength = int(file['length'])
+    filename=os.path.basename(os.path.normpath(file['path']))
+    return (filename, completedLength/totalLength*100)
+
+
+if len(active_downloads) != 0:
+    print("Active")
+    for bucket in active_downloads:
+        for file in bucket["files"]:
+            filename, percent = get_download_progess(file)
+            print(f"{filename}: {percent}")
+
+if len(stopped_downloads) != 0:
+    print("Completed")
+    for bucket in stopped_downloads:
+        for file in bucket["files"]:
+            filename, percent = get_download_progess(file)
+            print(f"{filename}: {percent}")
+
