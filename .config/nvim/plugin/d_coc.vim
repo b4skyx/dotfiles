@@ -10,9 +10,6 @@
 	  return !col || getline('.')[col - 1]  =~# '\s'
 	endfunction
 
-	" Rust autofmt on save
-	let g:rustfmt_autosave = 1
-
 " Use <c-space> to trigger completion.
   inoremap <silent><expr> <c-space> coc#refresh()
 

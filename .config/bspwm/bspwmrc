@@ -74,7 +74,7 @@ picom &
 dunst &
 
 # Replace caps lock with Esc
-setxkbmap -option caps:backspace
+setxkbmap -option caps:escape
 
 # AUTOSTART
 hsetroot -cover ~/.config/wallpaper.jpg &

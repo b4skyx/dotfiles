@@ -62,3 +62,6 @@ timeout = 0
 background = "#2a2f33"
 foreground = "#b3cfa7"
 frame_color = "#b8bb26"
+
+[log_notifs]
+script = ~/.local/bin/dunst_logger.sh

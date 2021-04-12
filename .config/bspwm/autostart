@@ -1,14 +1,14 @@
 #!/bin/sh
 # Applications
-pgrep conky || ~/.config/conky/start-conky.sh &
+pgrep conky || conky &
 pidof redshift || redshift &
 xrdb ~/.Xresources
 firefox &
 mailsync &
 
 mpd-mpris &
-pgrep bspswallow || ~/.local/scripts/bspswallow &
+pgrep bspswallow || ~/.local/scripts/bspwm/bspswallow &
 
-xautolock -detectsleep -time 10 -locker "~/.local/scripts/lock.sh" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" &
+xautolock -detectsleep -time 10 -locker lock.sh -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" &
 
 mate-power-manager &

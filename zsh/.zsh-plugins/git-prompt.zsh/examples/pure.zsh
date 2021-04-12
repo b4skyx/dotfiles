@@ -22,8 +22,8 @@ ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg_bold[green]%}✔"
 # PROMPT=$'%(4~|-/%F{green}%3~%f%F{242}|%F{green}%~%f%F{242})$(gitprompt)%f
 # %(12V.%F{242}%12v%f .)%(?.%F{yellow}.%F{red})➜%f '
 
-PROMPT=$'╭ %F{blue}%(4~|../%3~|%~)%f%F{242}$(gitprompt)%f
-╰ %(12V.%F{242}%12v%f .)%(?.%F{blue}.%F{red})⊡%f '
+PROMPT=$'%F{cyan}%(4~|../%3~|%~)%f%F{242}$(gitprompt)%f
+%(12V.%F{242}%12v%f .)%(?.%F{green}.%F{red})❯%f '
 
 
 setup() {

@@ -18,6 +18,7 @@ audio_output {
 }
 visualizer_output_name = "my_fifo"
 visualizer_type = "spectrum"
+execute_on_song_change = nowplaying
 ##
 #
 
@@ -29,19 +30,19 @@ playlist_disable_highlight_delay = "0"
 message_delay_time = 5
 
 now_playing_suffix = $/b
-
 selected_item_prefix = "* "
 
 browser_sort_mode = name
 #
 browser_sort_format = {%a - }{%t}|{%f} {(%l)}
 song_list_format = "{{%a - %t}|{%f}}{$R%l}"
-# song_columns_list_format = "(20)[cyan]{a} (50)[white]{t|f:Title} (20)[cyan]{br} (7f)[magenta]{l}"
-song_columns_list_format = "(25)[cyan]{a} (50)[white]{t|f:Title} (7f)[magenta]{l}"
+# song_columns_list_format = "(25)[cyan]{a} (50)[white]{t|f:Title} (7f)[white]{l}"
+song_columns_list_format = "(50)[green]{t|f:Title} (40)[cyan]{ar} (5f)[cyan]{l}"
+song_status_format = "{$2 $8%a $3: $8%t $3 $6%b}|{$b$2 $8%f}"
 
-# execute_on_song_change = notify-send -i "~/music_icon.png" "Now Playing ♫" "$(mpc current)"
-execute_on_song_change = nowplaying
-
+progressbar_elapsed_color = cyan
+statusbar_color = green
+statusbar_time_color = cyan
  playlist_display_mode = "columns"
 
  browser_display_mode = "columns"
@@ -105,8 +106,6 @@ lines_scrolled = "2"
 
 ## Other ##
 regular_expressions = "extended"
-
-#progressbar_elapsed_color = "white"
 
 # enable_window_title = "no"
 follow_now_playing_lyrics = "yes"

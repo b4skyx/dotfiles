@@ -56,18 +56,19 @@ end
 -- This is a crude attempt to figure out if a (beefy) dedicated GPU is present.
 -- Can't identify the actually used GPU but works when we assume that an existing
 -- dedicated GPU can/will be used in case we are drawing power from AC.
+        -- local r = exec({"lshw", "-C", 'display'})
+        -- local r = exec({"nvidia-smi"})
+        -- r.stdout = string.lower(r.stdout)
+        -- return string.find(r.stdout, "amd") ~= nil or string.find(r.stdout, "nvidia") ~= nil
+        -- return string.find(r.stdout, "mpv") ~= nil
 function dedicated_gpu()
     if is_osx then
         local r = exec({"system_profiler", "SPDisplaysDataType"})
         return string.find(r.stdout, "Chipset Model: Radeon") ~= nil or string.find(r.stdout, "Chipset Model: NVIDIA GeForce") ~= nil
     -- Untested
     elseif is_linux then
-        -- local r = exec({"lshw", "-C", 'display'})
-        local r = exec({"nvidia-smi"})
-        r.stdout = string.lower(r.stdout)
-        -- return string.find(r.stdout, "amd") ~= nil or string.find(r.stdout, "nvidia") ~= nil
-
-        return string.find(r.stdout, "mpv") ~= nil
+        local nv = os.getenv("__NV_PRIME_RENDER_OFFLOAD")
+        return nv ~= nil
     elseif is_windows then
         msg.warn("dedicated_gpu() not implemented on windows. PRs welcome")
     end
@@ -77,6 +78,7 @@ end
 
 
 local function determine_level(width, height, fps)
+
     if on_battery() then
         return LOW
     end

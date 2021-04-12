@@ -55,17 +55,15 @@ alias ...='cd ../..'
 alias g='git'
 alias p='prime-run'
 alias grep='grep --color=auto'
-alias la='exa -lah --color=auto'
-alias lh='exa -lh --color=auto'
-alias ls='exa --color=auto'
-alias l='exa --color=auto'
+alias la='exa -lah --color=auto --icons'
+alias lh='exa -lh --color=auto --icons'
+alias ls='exa --color=auto --icons'
+alias l='exa --color=auto --icons'
 alias :q='exit'
 alias ssh-public-key='cat ~/.ssh/id_rsa.pub'
 alias vim='nvim'
 alias whoneeds='pacman -Qi'
 alias notes='nvim /data/workspace/notes/index.md'
 alias rmorphans='sudo pacman -Rns $(pacman -Qdtq)'
+alias d='dragon -a -x'
 #}}}
-
-source $HOME/.config/broot/launcher/bash/br
-export PATH=$HOME/.config/nvcode/utils/bin:$PATH

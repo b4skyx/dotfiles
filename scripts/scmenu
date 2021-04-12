@@ -31,7 +31,7 @@ function helpfn() {
 
 # Set inital options and choices
 
-save_folder="$HOME"
+save_folder="$HOME/Screenshots"
 options=("Fullscreen\nSelection\nCurrent Window\nTimer")
 choice=""
 
@@ -46,7 +46,7 @@ function get_choice() {
 
 # Processing the choices made by the user
 function runner() {
-	file_name=$(date +Screenshot_%I%m%S.png)
+	file_name=$(date +Screenshot_%d%m%y_%H%M%S.png)
 	if [ "$choice" = "Timer" ]
 	then
 		seconds=`$dmenu_cmd "After number of seconds"`
@@ -58,10 +58,10 @@ function runner() {
 	then
 		xclip -selection clipboard < /tmp/deletion_link
 		rm /tmp/deletion_link
-		notify-send "Deletion Link copied"
+		notify-send -i /tmp/screenshot.png "Deletion Link copied"
 	elif [ "$choice" = "Fullscreen" ]
 	then
-		sleep 1
+		sleep 0.2
 		maim /tmp/screenshot.png
 		save_clip
 	elif [ "$choice" = "Selection" ]
@@ -120,16 +120,16 @@ function save_clip(){
 	if [ "$choice" = "Copy to Clipboard" ]
 	then
 		xclip -selection clipboard -t image/png /tmp/screenshot.png
-		notify-send "Screenshot copied to Clipboard"
+		notify-send -i /tmp/screenshot.png "Screenshot Captured!!" "Copied to clipboard"
 	elif [ "$choice" = "Save Image" ]
 	then
 		cp /tmp/screenshot.png $save_folder/$file_name
-		notify-send "Image saved with name $file_name"
+		notify-send -i /tmp/screenshot.png "Screenshot Saved!!" "$file_name"
 	elif [ "$choice" = "Upload to Imgur" ]
 	then
 		notify-send "Uploading to Imgur"
 		upload_to_imgur
-		notify-send "URL copied to Clipboard."
+		notify-send -i /tmp/screenshot.png -i "Uploaded to Imgur!" "Imgur URL copied to Clipboard."
 	fi
 }
 

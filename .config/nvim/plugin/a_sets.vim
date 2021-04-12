@@ -37,6 +37,7 @@
 " Command Completion
 	set wildmenu
 	set wildmode=longest:full,full
+	set completeopt=menuone,noselect
 
 " Clipboard
 	set clipboard+=unnamedplus

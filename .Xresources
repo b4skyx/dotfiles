@@ -5,10 +5,10 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 
-! window padding
-st.borderpx:          15
+st.borderpx:          6
 st.font: 							Sarasa Term K:pixelsize=18:antialias=true
-! st.opacity: 255
+st.opacity: 255
+st.alpha: 0.94
 
 ! special
 *.foreground:   #bfddb2

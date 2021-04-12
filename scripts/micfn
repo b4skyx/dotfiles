@@ -17,9 +17,9 @@ function toggle() {
 	amixer set Capture toggle > /dev/null
 	if amixer get Capture | grep "\[off\]" > /dev/null
 	then
-		notify-send -t 3000 "$active_port" "Microphone OFF"
+		notify-send -i ~/.assets/microphone_muted.png -t 3000 "$active_port" "Microphone OFF!"
 	else
-		notify-send -t 3000 "$active_port" "Microphone ON"
+		notify-send -i ~/.assets/microphone.png -t 3000 "$active_port" "Microphone ON~"
 	fi
 }
 

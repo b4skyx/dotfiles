@@ -29,6 +29,9 @@ super + Escape
 super + shift + c
 	picom_toggle
 
+super + shift + m
+	pkill -USR1 -x glava || glava --desktop > /dev/null &
+
 super + shift + Escape
 	~/.config/polybar/launch.sh
 
@@ -175,9 +178,6 @@ super + o; {w, p, r}
 ## Dropdown
 super + alt + m
 	tdrop_c -n 2 -p 'bspc rule -a St -o state=floating' st -e ncmpcpp
-super + shift + Return
-	tdrop_c -n 1 -p 'bspc rule -a St -o state=floating' st
-
 
 # Remove current tab from tabbed
 super + t; r
@@ -186,3 +186,6 @@ super + t; r
 # At given direction: join two windows into a new tabbed or add window to an existing tabbed
 super + t; {Left,Down,Up,Right}
         tabc.sh $(bspc query -N -n {west,south,north,east}) add $(bspc query -N -n focused)
+
+super + semicolon
+	~/.local/scripts/bspwm/bspc_marked_hidden

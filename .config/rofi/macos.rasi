@@ -19,7 +19,7 @@ prompt {
   text-color: @foreground;
   padding: 0.3em 0.5em 0.5em 0.5em;
   border: 0 0 0 0;
-  font: "Sarasa UI K 12";
+  font: "Sarasa Fixed K 12";
   border-radius: 0;
 }
 

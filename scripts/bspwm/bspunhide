@@ -1,5 +1,5 @@
 #!/bin/sh
-# Simple script to hide all he nodes on a desktop
+# Simple script to unhide all he nodes on a desktop
 
 NODES=$(bspc query -N -n .hidden -d focused)
 
