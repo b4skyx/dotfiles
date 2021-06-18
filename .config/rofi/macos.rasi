@@ -3,7 +3,7 @@ window {
   spacing: 0;
   transparency: "real";
   border-color: @border;
-  border: 4;
+  border: 3;
   border-radius: 0;
 }
 

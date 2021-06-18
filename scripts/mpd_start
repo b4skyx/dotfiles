@@ -5,4 +5,4 @@ until pids=$(pidof mpd)
 do
     sleep 1
 done
-pgrep mpd-mpris || mpd-mpris &
+pgrep mpd-mpris || mpDris2 &

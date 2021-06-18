@@ -70,11 +70,12 @@ bspc desktop -f 1
 xsetroot -cursor_name left_ptr &
 sxhkd &
 # xcompmgr -cCfF -t -2 -l -2 -r 2.8 -o 0.55 -D 5 &
-picom &
+picom --experimental-backends &
 dunst &
 
 # Replace caps lock with Esc
-setxkbmap -option caps:escape
+# setxkbmap -option caps:escape
+setxkbmap -option caps:backspace
 
 # AUTOSTART
 hsetroot -cover ~/.config/wallpaper.jpg &

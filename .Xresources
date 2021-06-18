@@ -16,8 +16,8 @@ st.alpha: 0.94
 *.cursorColor:  #bfddb2
 
 ! black
-*.color0:       #504945
-*.color8:       #504945
+*.color0:       #2a2f33
+*.color8:       #2a2f33
 
 ! red
 *.color1:       #ea5252
