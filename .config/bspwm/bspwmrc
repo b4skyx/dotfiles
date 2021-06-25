@@ -64,6 +64,7 @@ bspc rule -a Zathura state='tiled'
 bspc rule -a Pavucontrol state='floating'
 bspc rule -a flameshot state='floating'
 bspc rule -a *:SPLASH state=floating
+bspc rule -a Emacs state=tiled
 bspc desktop -f 1
 
 # INIT-DAEMONS

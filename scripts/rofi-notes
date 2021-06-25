@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Fallback to dmenu if rofi is not found
+dmenu_cmd="rofi -dmenu"
+type rofi&>/dev/null || {
+	type dmenu&>/dev/null || {
+		echo "Neither rofi nor dmenu installed..." >&2
+		exit 17
+	}
+	dmenu_cmd="dmenu"
+}
+
+set -u
+set -e
+
+readonly NOTES_FILE=~/.notes
+
+if [[ ! -a "${NOTES_FILE}" ]]; then
+    echo "empty" >> "${NOTES_FILE}"
+fi
+
+function get_notes()
+{
+    cat ${NOTES_FILE}
+}
+
+function main()
+{
+    local all_notes="$(get_notes)"
+
+    local note=$( (echo "${all_notes}")  | $dmenu_cmd -i -p "")
+    local matching=$( (echo "${all_notes}") | grep "^${note}$")
+
+    if [[ -n "${matching}" ]]; then
+        options=("Copy Note\nDelete Note")
+        choice=$(echo -e "$options" | $dmenu_cmd -i -p "")
+        if [ "$choice" = "Copy Note" ]; then
+            echo "$matching" | xclip -selection clipboard
+            notify-send " Note copied to clipboard" "$matching"
+        elif [ "$choice" = "Delete Note" ]; then
+            local new_notes=$( (echo "${all_notes}")  | grep -v "^${note}$" )
+            notify-send " Note Cleared" "$note"
+        fi
+    else
+        local new_notes=$( (echo -e "${all_notes}\n${note}") | grep -v "^$")
+        if [ "$note" != "" ]; then
+            notify-send " Note Taken" "$note"
+        fi
+    fi
+
+    echo "${new_notes}" > "${NOTES_FILE}"
+}
+
+main

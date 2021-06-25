@@ -5,7 +5,7 @@ export PATH
 
 export EDITOR='/usr/bin/nvim'
 export BROWSER='firefox'
-export TERM='st'
+export TERM='xterm-256color'
 export QT_QPA_PLATFORMTHEME='gtk2'
 export FZF_CTRL_T_COMMAND='fd --type f --hidden --exclude .git --exclude .cache'
 export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'

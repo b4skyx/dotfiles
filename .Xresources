@@ -5,7 +5,7 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 
-st.borderpx:          6
+st.borderpx:          8
 st.font: 							Sarasa Term K:pixelsize=18:antialias=true
 st.opacity: 255
 st.alpha: 0.94
@@ -16,8 +16,8 @@ st.alpha: 0.94
 *.cursorColor:  #bfddb2
 
 ! black
-*.color0:       #2a2f33
-*.color8:       #2a2f33
+*.color0:       #504945
+*.color8:       #504945
 
 ! red
 *.color1:       #ea5252

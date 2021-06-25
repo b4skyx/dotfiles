@@ -5,12 +5,12 @@ unread="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx
 icon=""
 pidof mbsync >/dev/null 2>&1 && icon=" "
 
-[ "$unread" = "0" ] && [ "$unread" = "" ] || echo " $unread$icon"
+[ "$unread" = "0" ] && [ "$unread" = "" ] || echo " $unread$icon"
 
 if [ -e /tmp/unread-mail-count ]
 then
 	mailread=$(cat /tmp/unread-mail-count)
-	if [[ "$unread" -gt "$b$mailread" ]] && [ "" != "$icon" ]
+	if [[ "$unread" -gt "$b$mailread" ]] && [ "" != "$icon" ]
 	then
 		notify-send -i ~/.assets/email.png "New Mail!!" "You have $unread new emails."
 		echo "$unread" > /tmp/unread-mail-count

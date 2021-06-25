@@ -1,5 +1,3 @@
-###############################################################
-#
 ncmpcpp_directory  = ~/.ncmpcpp
 lyrics_directory  = ~/.ncmpcpp/lyrics
 
@@ -17,10 +15,8 @@ audio_output {
         format          "44100:16:2"
 }
 visualizer_output_name = "my_fifo"
-visualizer_type = "spectrum"
+visualizer_type = "ellipse"
 execute_on_song_change = nowplaying
-##
-#
 
 visualizer_look = "●┃"
 visualizer_in_stereo = "yes"
@@ -33,11 +29,10 @@ now_playing_suffix = $/b
 selected_item_prefix = "* "
 
 browser_sort_mode = name
-#
 browser_sort_format = {%a - }{%t}|{%f} {(%l)}
 song_list_format = "{{%a - %t}|{%f}}{$R%l}"
-# song_columns_list_format = "(25)[cyan]{a} (50)[white]{t|f:Title} (7f)[white]{l}"
 song_columns_list_format = "(50)[green]{t|f:Title} (40)[cyan]{ar} (5f)[cyan]{l}"
+# song_columns_list_format = "(50)[cyan]{ar}(50)[green]{t|f:Title}"
 song_status_format = "{$2 $8%a $3: $8%t $3 $6%b}|{$b$2 $8%f}"
 
 progressbar_elapsed_color = cyan
@@ -62,25 +57,18 @@ progressbar_look = "━|━"
 # user_interface = "alternative"
 #
 header_visibility = no
-#
 statusbar_visibility = yes
-#
 titles_visibility = no
-
-#
 header_text_scrolling = yes
 #
-#
 #follow_now_playing_lyrics = no
-#
 fetch_lyrics_for_current_song_in_background = yes
-#
 ask_before_clearing_playlists = yes
 #
 #clock_display_seconds = no
 #
 
-display_volume_level = "yes"
+display_volume_level = "no"
 
 display_bitrate = "no"
 search_engine_default_search_mode = 2
@@ -111,4 +99,3 @@ regular_expressions = "extended"
 follow_now_playing_lyrics = "yes"
 ignore_leading_the = "yes"
 empty_tag_marker = ""
-

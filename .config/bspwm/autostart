@@ -2,12 +2,13 @@
 # Applications
 pgrep conky || conky &
 pidof clight || clight --lat=26.83 --lon=80.92 &
+# pidof redshift || redshift &
 xrdb ~/.Xresources
 firefox &
 mailsync &
 setxkbmap -layout 'us(colemak)',us -option grp:alt_shift_toggle &
 
-mpd-mpris &
+mpd_start &
 pgrep bspswallow || ~/.local/scripts/bspwm/bspswallow &
 
 xautolock -detectsleep -time 10 -locker lock.sh -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" &

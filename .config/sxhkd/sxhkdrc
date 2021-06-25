@@ -12,6 +12,12 @@ alt + @space
 alt + shift+ @space
 	rofi -show run
 
+super + n
+	rofi-notes
+
+super + j
+	rofi-emoji
+
 # Screenshot
 Print
 	scmenu
