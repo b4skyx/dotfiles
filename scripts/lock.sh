@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+# Ain't much but honest work ;D
+# Author: b4skyx
+# Motivation: barbarossa93
+
 CLOCK_FONT="Sarasa UI HC"
 FONT="Sarasa Mono K"
 
-# weather="$(curl -s "https://wttr.in/lucknow?format="%C,+%t"")"
-                # --greeter-text="$(cat /sys/class/power_supply/BAT0/capacity)% | $(cat /sys/class/power_supply/BAT0/status) | $weather" \
 quote="$(shuf -n 1 ~/.quotes)"
 weather="$(cat /tmp/weather)"
 lock() {
@@ -41,7 +43,6 @@ dunstctl set-paused true
 if pgrep -x rofi; then
 	killall rofi
 fi
-# lock || lock.sh
 lock
 if [ "$status" == "Playing" ]; then
 	playerctl play
