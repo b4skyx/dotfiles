@@ -1,0 +1,92 @@
+configuration {
+	display-drun: "";
+	display-run: "";
+	display-window: "缾";
+	drun-display-format: "{name}";
+	icon-theme: "Flatery";
+	lines: 4;
+	columns: 4;
+	fixed-num-lines: true;
+	hide-scrollbar: true;
+	font: "Sarasa UI K 10";
+}
+
+@import "colors"
+
+window {
+	width: 35em;
+	spacing: 0;
+	transparency: "real";
+	background-color: @bg;
+	border: 3;
+	border-color: @bg2;
+	border-radius: 0;
+}
+
+mainbox {
+	background-color: @bg;
+}
+
+inputbar {
+	background-color: @bg;
+	text-color: @fg;
+	border-color: @bg2;
+	children: [prompt, entry];
+	border: 0;
+}
+
+prompt {
+	background-color: @bg;
+	text-color: @fg;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	border: 0;
+}
+
+entry {
+	background-color: @bg;
+	text-color: @fg;
+	placeholder: "";
+	padding: 0.5em 0 0.5em 0;
+	width: 10%;
+	horizontal-align:               0.46;
+	vertical-align:                 0;
+	border: 0;
+}
+
+listview {
+	background-color: @bg;
+	text-color: @fg;
+	cycle: false;
+	dynamic: true;
+	padding: 0.15em 0.5em 0.5em 0.5em;
+	border: 0;
+	layout: vertical;
+}
+
+element {
+	background-color: @bg;
+	text-color: @fg;
+	padding: 0.15em 0.15em 0.15em 0.15em;
+	border: 0;
+	orientation: vertical;
+}
+
+element-icon {
+	border: 0;
+	size: 48px;
+	padding: 0.4em 0 0 0;
+}
+
+element-text {
+	border: 0;
+	padding: 0.2em 0.2em 0.2em 0;
+	horizontal-align:               0.5;
+	vertical-align:                 0.5;
+}
+
+element selected {
+	background-color: @bg2;
+	text-color: @fg;
+	border-color: @bg2;
+	border: 0;
+}

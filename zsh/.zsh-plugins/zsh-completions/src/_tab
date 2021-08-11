@@ -1,0 +1,29 @@
+#compdef _tab tab
+
+function _tab() {
+    function _tab_select() {
+        tab --_autocomplete_tab
+    }
+
+    function _tab_close() {
+        tab --_autocomplete_close_tab
+    }
+
+    _arguments -C \
+        '1: :($(_tab_select))' \
+        '-w=[closes the tab with the given name]:close:($(_tab_close))'\
+        '--close=[closes the tab with the given name]:close:($(_tab_close))'\
+        '-z=[disconnects any active sessions for the given tab]:close:($(_tab_close))'\
+        '--disconnect=[disconnects any active sessions for the given tab]:close:($(_tab_close))'\
+        '-l[lists the active tabs]' \
+        '--list[lists the active tabs]' \
+        '-k[checks the current workspace for errors and warnings]' \
+        '--check[checks the current workspace for errors and warnings]' \
+        '-W[terminates the tab daemon and all active pty sessions]' \
+        '--shutdown[terminates the tab daemon and all active pty sessions]' \
+        '--completion=[prints raw autocomplete scripts]: :(bash elvish fish powershell zsh)' \
+        '-h[Prints help information]' \
+        '--help[Prints help information]' \
+        '-V[Prints version information]' \
+        '--version[Prints version information]'
+}

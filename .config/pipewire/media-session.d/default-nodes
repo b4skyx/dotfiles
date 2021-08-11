@@ -1,0 +1,3 @@
+{
+ "default.configured.audio.sink": { "name": "bluez_output.F0_13_C3_C1_B4_DC.a2dp-sink" }
+}

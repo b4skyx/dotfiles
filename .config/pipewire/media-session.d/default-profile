@@ -1,0 +1,4 @@
+{
+  "default.profile.alsa_card.pci-0000:00:1f.3": { "name": "output:hdmi-stereo-extra1+input:analog-stereo" },
+  "default.profile.alsa_card.pci-0000_00_1f.3": { "name": "output:analog-stereo+input:analog-stereo" }
+}

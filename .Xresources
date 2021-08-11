@@ -1,0 +1,48 @@
+!-- Xft settings -- !
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+
+st.borderpx:          18
+st.font: 							Sarasa Term K:pixelsize=18:antialias=true
+st.opacity: 255
+st.alpha: 0.94
+
+! special
+*.foreground:   #bfddb2
+*.background:   #2a2f33
+*.cursorColor:  #bfddb2
+
+! black
+*.color0:       #504945
+*.color8:       #504945
+
+! red
+*.color1:       #ea5252
+*.color9:       #ea5252
+
+! green
+*.color2:       #ACB765
+*.color10:      #ACB765
+
+! yellow
+*.color3:       #c1bf89
+*.color11:      #c1bf89
+
+! blue
+*.color4:       #82abbc
+*.color12:      #82abbc
+
+! magenta
+*.color5:       #b18a97
+*.color13:      #b18a97
+
+! cyan
+*.color6:       #88b482
+*.color14:      #89b482
+
+! white
+*.color7:       #bfddb2
+*.color15:      #bfddb2

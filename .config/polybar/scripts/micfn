@@ -1,0 +1,34 @@
+#!/bin/sh
+
+function helpfn() {
+	echo "micfn, a quick mic toggle script"
+}
+
+active_port=$(pactl list | sed -n '/^Source/,/^$/p' | grep 'Active Port' | cut -d ' ' -f3)
+
+if amixer get Capture | grep "\[off\]" > /dev/null
+then
+	status="OFF"
+else
+	status="ON"
+fi
+
+function toggle() {
+	amixer set Capture toggle > /dev/null
+	if amixer get Capture | grep "\[off\]" > /dev/null
+	then
+		notify-send -t 3000 "$active_port" "Microphone OFF"
+	else
+		notify-send -t 3000 "$active_port" "Microphone ON"
+	fi
+}
+
+if [ "$1" == "-h" -o "$1" == "--help" ]; then
+	helpfn
+	exit 0
+elif [ "$1" == "-t" -o "$1" == "--toggle" ]; then
+	toggle
+	exit 0
+elif [ $# -eq 0 ]; then
+	echo $status
+fi

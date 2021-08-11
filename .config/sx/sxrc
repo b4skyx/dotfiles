@@ -1,0 +1,7 @@
+#!/bin/bash
+# Run prime-offload if optimus manager is installed
+if [[ -f /usr/bin/prime-offload ]]; then
+    /usr/bin/prime-offload
+fi
+
+exec bspwm

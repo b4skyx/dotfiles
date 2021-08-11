@@ -1,0 +1,601 @@
+@import url("https://discordstyles.github.io/AdjustableServerWidth/base.css");
+@import url("https://goldenlys.github.io/BetterDiscord-Elysia/HoverMemberList.css");
+
+.membersWrap-2h-GB4 {
+    -webkit-transform: translateX(205px);
+    transform: translateX(205px);
+    position: absolute;
+}
+
+:root {
+  --server-icon-size: 45px; /* Size of the server icons | DEFAULT: 35px */
+  --server-icon-spacing: 10px; /* Spacing between server icons. Negative values are allowed | DEFAULT: 8px */
+  --server-container-padding: 15px; /* Spacing to the left and right sides of server icons | DEFAULT: 10px */
+}
+
+/* Font */
+
+@font-face {
+	font-family: 'Baloo2';
+	font-style: normal;
+	font-weight: 200;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/baloo2/v1/wXKrE3kTposypRyd51jcAA.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+::-webkit-input-placeholder, body, button, input, select, textarea {
+	font-family: var(--font, "Sarasa UI HC"), Whitney;
+}
+
+
+.theme-dark {
+    --background-primary: #2a2f33;
+    --background-secondary: #31363b;
+    --background-tertiary: #312e35;
+    --background-accent: #504945;
+    --text-normal: #bfddb2;
+    --text-spotify: #B3CFA8;
+    --text-muted: #bdae93;
+    --text-link: #458588;
+    --background-floating: #31363b;
+    --header-primary: #B3CFA7;
+    --header-secondary: #bdae93;
+    --header-spotify: #b8bb26;
+    --interactive-normal: #B3CFA7;
+    --interactive-hover: #bdae93;
+    --interactive-active: #B3CFA8;
+
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+    background: transparent !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    width:5px !important;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--background-secondary) !important;
+    width:5px !important;
+    border:none !important;
+    border-radius: 0px !important;
+}
+
+/* Guild menu (discord forces light theme) */
+div[class*="wrapper"][class*="fixClipping"]{
+    background-color: var(--background-secondary);
+}
+
+/* New Messages Bar */
+div[class*="newMessagesBar"] {
+    background-color: var(--background-secondary);
+}
+
+/* Hide the action bar nametag and status */
+section > div[class*="container"] > [class*='nameTag-'] {
+    display:none;
+}
+
+/* Center buttons in the panels container */
+div[class*="sidebar"] > [class*='panels-'] [class*='container-']{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+}
+
+/* Credit to craftxbox */
+
+/* Mentions (channel, user) */
+span[class*="mention"][class*="interactive"] {
+    color: var(--text-link);
+}
+
+/* Mentions (role) */
+span[class*="mention"] {
+    color: var(--text-link);
+}
+
+div[class^="scrollableContainer"] {
+    background-color: var(--background-secondary);
+}
+
+div[class^="name"] > span {
+    color: var(--text-normal);
+}
+
+h1, h2, h3 {
+    color: var(--text-normal);
+}
+
+h3[class^="title"] {
+    color: var(--text-normal);
+}
+
+div[class^="panels"] > div[class^="container"] {
+    background-color: var(--background-secondary);
+}
+
+div[class^="wrapper"] > div[class^="container"] {
+    background-color: var(--background-tertiary);
+}
+
+section[class^="panels"] > div[class^="container"] > div[class^="nameTag"] > * {
+    color: var(--text-normal);
+}
+
+section[class^="panels"] > div[class^="container"] {
+    background-color: var(--background-secondary);
+}
+
+div.userSettingsAccount-2eMFVR > div > div {
+    background-color: var(--background-primary);
+}
+
+* > div[class^="contents"] {
+    color: var(--text-normal)
+}
+
+div[class^="size14"] {
+    color: var(--text-normal);
+}
+
+div[class^="topic"] {
+    color: var(--text-muted);
+}
+
+div[class^="friendsTable"] {
+    background-color: var(--background-primary);
+}
+
+[class^="input"] {
+    background-color: var(--background-primary);
+}
+
+div[class^="uploadModal"] > div[class^="inner"], div[class^="inner"] > div[class^="uploadModal"], div[class^="uploadModal"] > div[class^="footer"] {
+    background-color: var(--background-primary);
+}
+
+[class^="usernameContainer"]:not([style]){
+    color: var(--text-normal)
+}
+
+div[class^="username"] {
+    background-color: inherit;
+}
+
+span[class^="wrapperHover"][role="button"] {
+    color: var(--text-link)
+}
+
+[class^="autocompleteInner"] {
+    background-color: var(--background-secondary)
+}
+
+
+a[class^="wrapper"] {
+    color: var(--text-normal)
+}
+
+[class^="tooltipRight"] {
+    color: var(--text-normal)
+}
+
+div[role="dialog"] {
+    color: var(--background-primary)
+}
+
+div[class*="activityPanel"] {
+    background-color: var(--background-secondary)
+}
+
+div[class^="text"] {
+    color: var(--text-normal)
+}
+
+div[class^="side"] > div[class^="item"] {
+    background-color: var(--background-secondary)
+}
+
+[class^="userInfoViewing"] {
+    background-color: var(--background-secondary);
+}
+
+[class*="lookFilled"][class*="colorBrand"] {
+    background-color: var(--text-link);
+}
+
+div[class*="tooltip"] {
+    background-color: var(--background-secondary);
+}
+div[class*="contextMenu"] {
+    background-color: var(--background-secondary);
+}
+
+div[class*="header"] {
+    background-color: var(--background-secondary)
+}
+
+div[class*="details"] {
+    color: var(--text-normal);
+}
+
+div[class*="headerTextNormal"] {
+    background-color: var(--background-secondary);
+}
+
+span {
+    color: var(--text-normal)
+}
+
+span[class*="headerName"] {
+    color: var(--text-normal)
+}
+
+div[class*="userPopout"] > div[class*="footer"] {
+    background-color: var(--background-primary)
+}
+
+div[class*="scrollerWrap"][class*="body"] > div[class*="scroller"] {
+    background-color: var(--background-primary)
+}
+
+[class*="footer"] > [class*="quickMessage"] {
+    background-color: var(--background-primary)
+}
+
+div[class^="topSectionPlaying"] > header[class^="header"] {
+    background-color: var(--background-secondary);
+}
+
+header[class^="title"] {
+    color: var(--text-normal)
+}
+
+div[class^="tabBody"] {
+    background-color: var(--background-primary);
+}
+
+div[class^="topSectionNormal"] > header > div[class^="headerInfo"]{
+    background-color: inherit;
+}
+
+div[class^="topSectionSpotify"] > header > div[class^="headerInfo"]{
+    background-color: inherit;
+}
+
+div[class^="topSectionSpotify"] {
+    background-color: var(--header-spotify);
+}
+
+div[class*="nameNormal"][class*="ellipsis"][class*="textRow"][class*="weightSemiBold"] > a {
+    color: var(--text-normal)
+}
+
+div[class*="detailsWrap"][class*="textRow"] > span > a {
+    color: var(--text-normal);
+}
+
+div[class*="state"][class*="ellipsis"][class*="textRow"] > span > a {
+    color: var(--text-normal);
+}
+
+div[class^="headerTextNormal"][class*="headerText"][class*="small"][class*="marginBottom8"][class*="weightBold"] {
+    color: var(--text-normal);
+    background-color: var(--background-secondary);
+    background: transparent !important;
+}
+
+div[class*="details"][class*="ellipsis"][class*="textRow"] {
+    color: var(--text-normal)
+}
+
+div[class*="timestamp"] {
+    color: var(--text-normal)
+}
+
+section[class^="section"] {
+    background-color: var(--background-secondary);
+}
+
+div[class*="container"] > div[class*="contentWrapper"] {
+    background-color: var(--background-secondary);
+}
+
+div[class*="selectorSelected"][class*="selector"] {
+    background-color: var(--background-tertiary);
+}
+
+div[class*="selectorSelected"][class*="selector"] > * > div[class*="marginLeft"] {
+    color: var(--text-normal)
+}
+
+div[class*="selectorSelected"][class*="selector"] > * > div[class*="colorStandard"] {
+    color: var(--text-muted);
+}
+
+[class*="selector"] > * > div[class*="marginLeft"] {
+    color: var(--text-normal)
+}
+
+[class*="selector"] > * > div[class*="colorStandard"] {
+    color: var(--text-muted);
+}
+
+
+
+div[class*="infoBar"] {
+    background-color: var(--background-tertiary);
+}
+
+div[class*="body"][class*="scrollerBase"][class*="thin"] {
+    background-color: var(--background-primary);
+}
+
+/* Fix text colour when Spotify is playing */
+div[class*="topSectionSpotify"] > header > div[class*="headerInfo"] > div[class*="nameTag"] > * {
+    color: var(--text-spotify);
+}
+
+/* Fix button colours */
+div[class*="topSectionSpotify"] > header > button[class*="actionButton"] {
+    background-color: var(--background-tertiary);
+}
+
+div[class*="topSectionNormal"] > header > button[class*="actionButton"] {
+    background-color: var(--background-secondary);
+}
+
+div[class*="topSectionPlaying"] > header > button[class*="actionButton"] {
+    background-color: var(--background-tertiary);
+}
+
+/** Search **/
+div[class*="resultsGroup"] {
+    background-color: var(--background-secondary);
+}
+
+div[class*="resultsGroup"] > div[class*="option"]::after {
+    background-color: var(--background-secondary);
+    background: transparent
+}
+
+div[class*="resultsGroup"] > div[class*="option"]:hover {
+    background-color: var(--background-primary);
+}
+
+/** Channel topic **/
+div[class*="layerContainer"] > div[class*="layer"] > div[class*="focusLock"] > div[class*="modal"] > div[class*="content"] {
+    background-color: var(--background-secondary);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/** Playing statuses */
+* > div[class*="activityText"] {
+    color: var(--text-muted);
+}
+
+* > svg {
+    color: var(--interactive-hover)
+}
+
+/** Header fixes */
+* > span[class*="activityName"] {
+    color: var(--text-normal)
+}
+
+div[class*="activityUserPopout"] > h3[class*="headerTextNormal"][class*="headerText"] {
+   color: var(--text-normal);
+}
+
+/** Role names */
+div[class*="roleName"] {
+
+    color: var(--text-normal);
+}
+
+/** That discord icon on the top left */
+.wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9 {
+    background-color: var(--background-primary);
+}
+.wrapper-1BJsBx .childWrapper-anI2G9 {
+    background-color: var(--background-primary);
+}
+
+/** and the pill beside it */
+div[class*="pill"] > span[class*="item"] {
+    background-color: var(--background-primary)
+}
+
+/** Deleted Messages */
+div[class*="focusLock"] > div[class*="root"] > div[class*="content"] {
+    background-color: var(--background-secondary);
+}
+div[class*="focusLock"] > div[class*="root"] > div[class*="content"] > div[class*="message"] {
+    background-color: var(--background-tertiary);
+}
+
+div[class*="focusLock"] > div[class*="root"] > div[class*="flex"] {
+    background-color: var(--background-secondary);
+}
+
+/** Bot Tags */
+span[class*="botTag"] {
+    background-color: var(--text-link)
+}
+
+/** Discover Guilds */
+div[class*="circleIconButton"][class*="selected"] {
+    background-color: var(--background-secondary);
+}
+
+div[class*="dragRegion"] {
+    background-color: var(--background-secondary);
+}
+
+div[class*="container"] > div[class*="base"] > div[class*="content"] div[class*="scroller"][class*="auto"] {
+    background-color: var(--background-primary);
+}
+
+section[class*="guildListSection"] > div[class*="guildList"] > div[class*="loaded"] > div[class*="card"] {
+    background-color: var(--background-tertiary);
+}
+
+div[class*="searchBox"] {
+    border-color: var(--background-secondary);
+}
+
+div[class*="searchBox"] > div[class*="inputWrapper"] {
+    background-color: var(--background-tertiary);
+
+}
+
+div[class*="headerContentWrapper"] {
+    background-color: var(--background-primary);
+}
+
+div[class*="headerContentWrapper"] > div[class*="headerContent"] {
+    background-color: var(--background-primary);
+}
+
+div[class*="container"] > div[class*="search"] {
+    border-color: var(--background-primary);
+    color: var(--background-primary);
+}
+
+div[class*="headerContentWrapper"] > div[class*="headerContent"] > * {
+    color: var(--text-normal)
+}
+
+div[class*="categoryItem"][class*="selected"] > div[class*="itemInner"] {
+    background-color: var(--text-link);
+}
+div[class*="categoryItem"][class*="selected"] > div[class*="itemInner"] > * {
+    color: var(--text-normal)
+}
+
+/* Support new integrations menu */
+div[class*="flex"][class*="justifyStart"] > button[class*="copyButton"] {
+    background-color: var(--background-tertiary);
+}
+
+div[class*="flex"][class*="vertical"][class*="directionColumn"] > div[class*="body"] {
+    background-color: var(--background-secondary);
+}
+
+/* Fix Invites */
+div[class*="customScroller"] > div[class*="listContent"] > div[class*="headerSection"] {
+    background-color: var(--background-primary);
+}
+
+div[class*="flexChild"] > h4[class*="title"] {
+    color: var(--text-muted);
+}
+div[class*="flexChild"] > div[class*="text"] {
+    color: var(--text-muted);
+}
+
+/* Fix Nickname Menu */
+div[class*="root"] > form > div[class*="content"] {
+    background-color: var(--background-secondary);
+}
+
+div[class*="root"] > form > div[class*="content"] > div[class*="input"] > h5[class*="colorStandard"] {
+    background-color: var(--background-secondary);
+    margin: 0;
+    color: var(--text-normal);
+}
+
+
+div[class*="root"] > form > div[class*="content"] > div[class*="input"] > div[class*="inputWrapper"] > input {
+    background-color: var(--background-tertiary);
+}
+
+div[class*="flex"][class*="horizontalReverse"][class*="directionRowReverse"] {
+    background-color: var(--background-floating);
+}
+
+/* Fix "Listen Along" */
+
+/* Modal */
+div[class*="modal"] > div[class*="inner"] > div[class*="modal"] > div[class*="content"] {
+    background-color: var(--background-secondary);
+}
+
+div[class*="modal"] > div[class*="inner"] > div[class*="modal"] > div[class*="content"] > div[class*="invite"] {
+    background-color: var(--background-primary);
+}
+
+div[class*="header"][class*="inFront"] {
+    background-color: var(--background-primary);
+    color: var(--text-muted);
+}
+
+div[class*="flex"][class*="directionRow"][class*="alignEnd"] > div > button {
+    background-color: var(--text-link);
+}
+
+div[class*="content"][class*="thin"] > div[class*="textArea"] > div[class*="scrollableContainer"] {
+    background-color: var(--background-primary);
+}
+
+/* Embed */
+div[id*="messages"] > div[class*="container"] > div[class*="invite"] {
+    background-color: var(--background-secondary);
+}
+
+div[id*="messages"] > div[class*="container"] > div[class*="invite"] > * > * > div[class*="header"] {
+    background-color: var(--background-secondary);
+}
+
+div[class*="details"] > a[class*="anchor"] {
+    color: var(--text-normal);
+}
+
+div[class*="state"] {
+    color: var(--text-normal);
+}
+
+div[class*="state"] > span > a[class*="anchor"] {
+    color: var(--text-normal);
+}
+
+/* Tooltip fix */
+div[class*="tooltipContent"] {
+    color: var(--text-normal);
+}
+
+/* MessageBox fix */
+div[class*="markdown"] {
+    color: var(--text-normal);
+}
+
+/* Spotify in Powercord */
+div[class="powercord-spotify"] {
+    background-color: var(--background-secondary);
+}
+
+div[class="powercord-spotify hover"] {
+    background-color: var(--background-secondary);
+}
+
+/** Change Progress Bar colour */
+div[class="powercord-spotify"] > div[class*="spotify-seek"] > div[class*="spotify-seek-bar"] > * {
+    background-color: var(--header-spotify);
+}
+
+/** Change Progress Bar colour */
+div[class="powercord-spotify hover"] > div[class*="spotify-seek"] > div[class*="spotify-seek-bar"] > * {
+    background-color: var(--header-spotify);
+}
+
+/* BetterDiscord toasts */
+/* TODO: Fix shadows of toasts */
+div[class="bd-toast"] {
+    background: var(--background-floating);
+    color: var(--text-normal);
+}

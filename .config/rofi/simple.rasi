@@ -1,0 +1,86 @@
+configuration {
+	display-drun: "";
+	display-run: "";
+	display-window: "缾";
+	icon-theme: "Flatery";
+	lines: 8;
+	columns: 1;
+	fixed-num-lines: true;
+	hide-scrollbar: true;
+	font: "Sarasa UI K 12";
+}
+
+@import "colors"
+
+window {
+	width: 30em;
+	spacing: 0;
+	transparency: "real";
+	background-color: @bg;
+	border: 3;
+	border-color: @bg2;
+	border-radius: 0;
+}
+
+inputbar {
+	background-color: @bg;
+	text-color: @fg;
+	border-color: @bg2;
+	children: [prompt, entry];
+	border: 0;
+}
+
+prompt {
+	background-color: @bg;
+	text-color: @fg;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	border: 0;
+}
+
+entry {
+	background-color: @bg;
+	text-color: @fg;
+	placeholder: "";
+	padding: 0.5em 0 0.5em 0;
+	border: 0;
+}
+
+listview {
+	background-color: @bg;
+	text-color: @fg;
+	cycle: false;
+	dynamic: true;
+	padding: 0 0 0 0;
+	border: 1 0 0 0;
+	border-color: @bg2;
+}
+
+mainbox {
+	background-color: @bg;
+}
+
+element {
+	background-color: @bg;
+	text-color: @fg;
+	padding: 0.15em 0 0.15em 0.2em;
+	border: 0;
+}
+
+element-icon {
+	border: 0;
+	size: 0.9em;
+	padding: 0 0.4em 0 0.6em;
+}
+
+element-text {
+	border: 0;
+	padding: 0.2em 0.2em 0.2em 0;
+	font: "Sarasa UI K 12";
+}
+
+element selected {
+	background-color: @bg2;
+	text-color: @fg;
+	border-color: @bg2;
+	border: 0;
+}

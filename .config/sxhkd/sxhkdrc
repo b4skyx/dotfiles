@@ -1,0 +1,223 @@
+#######################
+# Program Keybindings #
+#######################
+
+# Spawn Terminal of a certain geometry
+super + Return
+	st -g 90x24
+
+# Rofi
+alt + @space
+	rofi -show drun -theme iconic -show-icons
+
+# rofi-emoji script
+super + j
+	rofi-emoji
+
+# Screenshot
+Print
+	scmenu
+
+#####################
+# BSPWM Keybindings #
+#####################
+
+#----~ Init ~----#
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Toggle compositor
+super + shift + c
+	picom_toggle
+
+# Toggle glava
+super + shift + m
+	pkill -USR1 -x glava || glava --desktop > /dev/null &
+
+# Reload Polybar
+super + shift + Escape
+	~/.config/polybar/launch.sh
+
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# Quit all ~ return to login
+super + alt + x
+	kill -9 -1
+
+# close and kill windows
+super + {_,shift + }q
+	bspc node -{c,k}
+
+#----~ Workspace Switching ~----#
+
+# Switch Active Workspaces
+alt + {Tab, shift + Tab}
+	bspc {desktop next.occupied -f, desktop prev.occupied -f}
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+#----~ Workspace Management ~----#
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+super + f
+	bspc node -t \~fullscreen
+
+# swap the current node and the biggest local node
+super + g
+	bspc node -s biggest.local
+
+# set the node flags
+super + ctrl + {m,l,s,p}
+	bspc node -g {marked,locked,sticky,private}
+
+# Toggle between floating and tiling
+super + u
+	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+
+# Toggle between pseudo-tiling and tiling
+super + i
+	bspc node focused.tiled -t pseudo_tiled || bspc node -t tiled
+
+# Mark node as hidden/unhide all
+super + {_, shift} + h
+	{bspc node --flag hidden=on, bspunhide}
+
+# Hide all on current desktop
+super + ctrl + h
+	bsphide
+
+# Rotate layout by 90 degrees
+super + shift + r
+	bspc node @/ -R 90
+
+#send node to next/previous window
+super + {_, shift} + k
+	bspc node -d {next, prev} -f
+
+#----~ Focus Settings ~----#
+
+# focus the node in the given direction
+super + {Left, Down, Up, Right}
+	bspc node -f {west,south,north,east}
+
+# focus the node for the given path jump
+super + shift + {p,b}
+	bspc node -f @{parent,brother}
+
+# focus the next/previous node in the current desktop
+super + {_,shift + }n
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9}
+	bspc {desktop -f,node -d} '^{1-9}'
+
+# Switch places with the direction window or create an empty node
+super + shift + {Left, Down, Up, Right}
+	bspwm_move {west,south,north,east}
+
+# Show or hide marked nodes
+super + semicolon
+	bspc_marked_hidden
+
+#----~ Preselection ~----#
+
+# preselect the direction
+super + ctrl + {Left, Down, Up, Right}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#----~ Movement/Resizing ~----#
+
+# Move current window to a pre-selected space or an empty node
+super + y
+    bspwm_fill
+
+# Resize
+super + alt + {Left, Down, Up, Right}
+    bspwm_resize {west,south,north,east} 25
+
+#----~ BSPWM tabs using Suckless tabbetd ~----#
+
+# At given direction: join two windows into a new tabbed or add window to an existing tabbed
+super + t; {Left,Down,Up,Right}
+        tabc.sh $(bspc query -N -n {west,south,north,east}) add $(bspc query -N -n focused)
+
+# Remove current tab from tabbed
+super + t; r
+        tabc.sh $(bspc query -N -n focused) remove
+
+
+
+###################################
+########### System Keys ###########
+###################################
+
+#Volume Control
+XF86AudioLowerVolume
+	pamixer -u && pamixer -d 5
+XF86AudioRaiseVolume
+	pamixer -u && pamixer -i 5
+XF86AudioMute
+	pamixer -t
+
+#Brightness control
+XF86MonBrightnessDown
+	brightness -dec 5
+XF86MonBrightnessUp
+	brightness -inc 5
+
+## Lcok screen
+super + shift + l
+	lock.sh
+
+## Personal password manager
+super + p
+	dpass
+
+## Music Controls
+super  + {less, greater, question}
+	playerctl {previous, next, play-pause}
+
+## Mic Toggle
+super + apostrophe
+	micfn --toggle
+
+## Open Applications
+
+## Tdrop, a drop down terminal to act like a scratchpad. Check scripts
+
+# Spawn a term with tmux
+super + shift + Return
+	st -g 90x24 -e "tmux"
+
+# General app shortcuts
+super + o; {w, p, r}
+	{firefox, pavucontrol, tdrop_c -n 3 -p 'bspc rule -a St -o state=floating' st -e lf}
+
+# Ncmpcpp
+super + alt + m
+	tdrop_c -n 2 -p 'bspc rule -a St -o state=floating' st -e ncmpcpp

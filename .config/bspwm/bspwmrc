@@ -1,0 +1,83 @@
+#!/bin/bash
+
+#### MONITORS ####
+bspc monitor -d 1 2 3 4 5 6 7 8 9
+
+external_monitor=$(xrandr --query | grep 'HDMI-2')
+
+if [[ $external_monitor = HDMI-2\ connected* ]]; then
+    xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output HDMI-2 --mode 1920x1080 --rotate normal --above eDP-1
+	bspc monitor HDMI-2 -d 1 2 3 4
+	bspc monitor eDP-1 -d 5 6 7 8 9
+else
+	xrandr --output eDP-1 --auto
+	bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
+fi
+
+# Truncate a couple of common commands that are used herein.
+_bc() {
+	bspc config "$@"
+}
+
+
+#### BSPWM configuration ####
+_bc window_gap 			  						8
+_bc top_padding 									26
+_bc top_monocle_padding 					0
+_bc border_width 								  2
+_bc bottom_padding                0
+_bc left_padding                  0
+_bc right_padding 								0
+_bc single_monocle                false
+_bc click_to_focus                false
+_bc split_ratio                   0.50
+_bc borderless_monocle            true
+_bc gapless_monocle               true
+_bc focus_by_distance             true
+_bc paddingless_monocle  	  			true
+_bc focus_follows_pointer         true
+_bc ignore_ewmh_focus 		  			true
+_bc history_aware_focus           true
+_bc remove_disabled_monitors      true
+_bc merge_overlapping_monitors    true
+_bc pointer_follows_monitor 			true
+_bc pointer_modifier mod1
+_bc pointer_action1 move
+_bc pointer_action2 resize_side
+_bc pointer_action3 resize_corner
+
+# Colors
+bspc config active_border_color "#474f54"
+bspc config focused_border_color "#474f54"
+bspc config normal_border_color "#373d41"
+bspc config presel_feedback_color "#373d41"
+
+# Rules
+
+bspc rule -a firefox -o desktop=2
+bspc rule -a discord desktop='^8'
+bspc rule -a feh state='floating'
+bspc rule -a mpv state='floating'
+bspc rule -a openssh-askpass state='floating'
+bspc rule -a "Iwgtk" state='floating'
+bspc rule -a Zathura state='tiled'
+bspc rule -a Pavucontrol state='floating'
+bspc rule -a flameshot state='floating'
+bspc rule -a *:SPLASH state=floating
+bspc desktop -f 1
+
+# INIT-DAEMONS
+xsetroot -cursor_name left_ptr &
+sxhkd &
+# xcompmgr -cCfF -t -2 -l -2 -r 2.8 -o 0.55 -D 5 &
+picom --experimental-backends &
+dunst &
+
+# Replace caps lock with Esc
+# setxkbmap -option caps:escape
+setxkbmap -option caps:backspace
+
+# AUTOSTART
+# set wallpaper using hsetroot
+hsetroot -cover ~/.config/wallpaper.jpg &
+~/.config/bspwm/autostart &
