@@ -65,5 +65,5 @@ alias d='dragon -a -x'
 alias notes='nvim /data/sync/Documents/vimwiki/index.md'
 #}}}
 
-source $HOME/vimwiki.zsh
-vimwiki_stats
+# source $HOME/vimwiki.zsh
+# vimwiki_stats

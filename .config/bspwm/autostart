@@ -9,7 +9,7 @@ xrdb ~/.Xresources
 firefox &
 syncthing serve --no-browser --logfile=default &
 
-setxkbmap -layout 'us(colemak)',us -option grp:alt_shift_toggle &
+# setxkbmap -layout 'us(colemak)',us -option grp:alt_shift_toggle &
 
 ~/.local/scripts/mpd_start &
 
