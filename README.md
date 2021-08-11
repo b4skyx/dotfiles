@@ -63,3 +63,6 @@ Paths to check alongside the dots repo:
 
 #### Locksceen
 ![lock](https://user-images.githubusercontent.com/55960554/129025379-a36d9911-4e86-463e-a4ea-52f21bc8e9b7.png)
+
+## Wallpaper
+![wallpaper](.config/wallpaper.jpg)
