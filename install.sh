@@ -78,6 +78,7 @@ configure() {
 	done
 
 	cp /tmp/dots/.Xresources "$HOME/.Xresources"
+	cp /tmp/dots/.quotes "$HOME/.quotes"
 
 	echo "Configured successfully! @b4skyx :D"
 }
