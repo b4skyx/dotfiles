@@ -4,10 +4,7 @@ configuration {
 	display-window: "缾";
 	drun-display-format: "{name}";
 	icon-theme: "Flatery";
-	lines: 4;
-	columns: 4;
 	fixed-num-lines: true;
-	hide-scrollbar: true;
 	font: "Sarasa UI K 10";
 }
 
@@ -61,6 +58,8 @@ listview {
 	padding: 0.15em 0.5em 0.5em 0.5em;
 	border: 0;
 	layout: vertical;
+	lines: 4;
+	columns: 4;
 }
 
 element {
@@ -72,12 +71,17 @@ element {
 }
 
 element-icon {
+	background-color: @bg;
 	border: 0;
 	size: 48px;
 	padding: 0.4em 0 0 0;
+	horizontal-align:               0.5;
+	vertical-align:                 0.5;
 }
 
 element-text {
+	background-color: @bg;
+	text-color: @fg;
 	border: 0;
 	padding: 0.2em 0.2em 0.2em 0;
 	horizontal-align:               0.5;
@@ -85,6 +89,19 @@ element-text {
 }
 
 element selected {
+	background-color: @bg2;
+	text-color: @fg;
+	border-color: @bg2;
+	border: 0;
+}
+
+element-text selected {
+	background-color: @bg2;
+	text-color: @fg;
+	border-color: @bg2;
+	border: 0;
+}
+element-icon selected {
 	background-color: @bg2;
 	text-color: @fg;
 	border-color: @bg2;
