@@ -1,17 +1,17 @@
 #!/bin/sh
 # Applications
-~/.config/polybar/launch.sh &
 pgrep conky || conky &
 
 # pidof clight || clight --lat=26.83 --lon=80.92 &
 pidof redshift || redshift &
 xrdb ~/.Xresources
 firefox &
-syncthing serve --no-browser --logfile=default &
+# syncthing serve --no-browser --logfile=default &
 
-setxkbmap -layout 'us(colemak)',us -option grp:alt_shift_toggle &
+# setxkbmap -layout 'us(colemak)',us -option grp:alt_shift_toggle &
 
 ~/.local/scripts/mpd_start &
 
 xautolock -detectsleep -time 5 -locker lock.sh -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" &
-mailsync &
+# mailsync &
+~/.config/polybar/launch.sh &

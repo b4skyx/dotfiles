@@ -1,7 +1,9 @@
 [global]
     monitor = 0
     follow = keyboard
-    geometry = "500x10-8+34"
+    width = 350
+    origin = top-right
+    offset = 8x34
     indicate_hidden = yes
     shrink = true
     transparency = 6
@@ -13,7 +15,6 @@
     frame_color = "#767c82"
     separator_color = auto
     font = Sarasa Mono K
-    height = 4
     markup = full
     format = "<span foreground='#b3cfa7'><b>%s</b>%p</span>\n%b"
     alignment = left

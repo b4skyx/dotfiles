@@ -65,6 +65,6 @@ alias d='dragon -a -x'
 alias notes='nvim /data/sync/Documents/vimwiki/index.md'
 #}}}
 
-source $HOME/.zsh-plugins/vimwiki.zsh
-vimwiki_stats
+# source $HOME/.zsh-plugins/vimwiki.zsh
+# vimwiki_stats
 source $HOME/autoswitch_venv.zsh
