@@ -18,3 +18,4 @@ export MOZ_USE_XINPUT2=1
 
 export VIMWIKI_PATH="/data/sync/Documents/vimwiki"
 export VIMWIKI_COMPLETE_MARK="✓"
+export MOZ_USE_XINPUT2=1

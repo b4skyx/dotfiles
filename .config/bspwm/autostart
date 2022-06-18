@@ -5,8 +5,9 @@ pgrep conky || conky &
 # pidof clight || clight --lat=26.83 --lon=80.92 &
 pidof redshift || redshift &
 xrdb ~/.Xresources
-firefox &
-# syncthing serve --no-browser --logfile=default &
+firefox-developer-edition &
+# vivaldi-stable --enable-features=VaapiVideoDecoder &
+syncthing serve --no-browser --logfile=default &
 
 # setxkbmap -layout 'us(colemak)',us -option grp:alt_shift_toggle &
 

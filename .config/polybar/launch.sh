@@ -12,8 +12,8 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 export DEFAULT_NETWORK_INTERFACE=$(ip route | grep '^default' | awk '{print $5}' | head -n1)
 
 # Load on second monitor if connected
-external_monitor=$(xrandr --query | grep 'HDMI-1-2')
-if [[ $external_monitor = HDMI-1-2\ connected* ]]; then
+external_monitor=$(xrandr --query | grep 'HDMI2')
+if [[ $external_monitor = HDMI2\ connected* ]]; then
 	polybar -c ~/.config/polybar/config.ini secondary &
 fi
 

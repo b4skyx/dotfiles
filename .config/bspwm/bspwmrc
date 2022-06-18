@@ -3,15 +3,15 @@
 #### MONITORS ####
 bspc monitor -d 1 2 3 4 5 6 7 8 9
 
-external_monitor=$(xrandr --query | grep 'HDMI-1-2')
+external_monitor=$(xrandr --query | grep 'HDMI2')
 
-if [[ $external_monitor = HDMI-1-2\ connected* ]]; then
-	xrandr --output eDP-1-1 --primary --mode 1920x1080 --rotate normal --output HDMI-1-2 --mode 1920x1080 --rotate normal --left-of eDP-1-1
-	bspc monitor HDMI-1-2 -d 1 2 3 4
-	bspc monitor eDP-1-1 -d 5 6 7 8 9
+if [[ $external_monitor = HDMI2\ connected* ]]; then
+    xrandr --output eDP1 --primary --mode 1920x1080 --rotate normal --output HDMI2 --mode 1920x1080 --rotate normal --left-of eDP1
+	bspc monitor HDMI2 -d 1 2 3 4
+	bspc monitor eDP1 -d 5 6 7 8 9
 else
-	xrandr --output eDP-1-1 --auto
-	bspc monitor eDP-1-1 -d 1 2 3 4 5 6 7 8 9
+	xrandr --output eDP1 --auto
+	bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9
 fi
 
 # Truncate a couple of common commands that are used herein.

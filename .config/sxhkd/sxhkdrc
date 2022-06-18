@@ -18,6 +18,9 @@ super + j
 Print
 	scmenu
 
+super + equal
+	scmenu
+
 #####################
 # BSPWM Keybindings #
 #####################
