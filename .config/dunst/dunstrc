@@ -1,9 +1,7 @@
 [global]
     monitor = 0
     follow = keyboard
-    width = 350
-    origin = top-right
-    offset = 8x34
+    geometry = "500x10-8+34"
     indicate_hidden = yes
     shrink = true
     transparency = 6
@@ -23,7 +21,7 @@
     ellipsize = middle
     ignore_newline = no
     stack_duplicates = true
-    hide_duplicate_count = true
+    hide_duplicate_count = false
     show_indicators = yes
     icon_position = left
     max_icon_size = 64
@@ -39,7 +37,6 @@
     mouse_left_click = close_current
     mouse_middle_click = do_action
     mouse_right_click = close_all
-    progress_bar_min_width = 200
 
 [shortcuts]
     close = ctrl+space
@@ -51,19 +48,19 @@
 timeout = 4
 background = "#2a2f33"
 foreground = "#b3cfa7"
-highlight = "#b3cfa7"
 frame_color = "#767c82"
 
 [urgency_normal]
 timeout = 8
-background = "#31363b"
+background = "#2a2f33"
 foreground = "#b3cfa7"
-highlight = "#b3cfa7"
-frame_color = "#474f54"
+frame_color = "#767c82"
 
 [urgency_critical]
 timeout = 0
 background = "#2a2f33"
 foreground = "#b3cfa7"
-highlight = "#b3cfa7"
 frame_color = "#b8bb26"
+
+[log_notifs]
+script = ~/.local/bin/dunst_logger.sh
